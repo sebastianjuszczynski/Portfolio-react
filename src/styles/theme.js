@@ -80,8 +80,10 @@ const sharedTheme = {
 };
 
 export const darkTheme = {
+    ...sharedTheme,
     isDark: true,
     colors: {
+        ...sharedTheme.colors,
         textMain: '#FAFAFA',
         textSecondary: '#7f7985',
         accent: '#FFFFFF',
@@ -96,11 +98,13 @@ export const darkTheme = {
         accent: 'linear-gradient(to right, #5d27ca 0%, #7b4ed1 50%, #9672d9 100%)',
         accentHover: 'linear-gradient(to right, #9672d9 0%, #7b4ed1 50%, #5d27ca 100%)',
     },
-    ...sharedTheme,
+    
 };
 export const lightTheme = {
+    ...sharedTheme,
     isDark: false,
     colors: {
+        ...sharedTheme.colors,
         textMain: '#2A1454',
         textSecondary: '#6B6670',
         accent: '#2A1454',
@@ -116,5 +120,5 @@ export const lightTheme = {
         accent: 'linear-gradient(to right, #9672e4 0%, #2a0a69 100%)',
         accentHover: 'linear-gradient(to right, #2a0a69 0%, #9672e4 100%)',
     },
-    ...sharedTheme,
+    
 };

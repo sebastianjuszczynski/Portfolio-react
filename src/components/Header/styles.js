@@ -7,7 +7,7 @@ export const HeaderWrapper = styled.header`
   right: 0;
   height: 80px;
   background-color: ${({ theme, $isScrolled }) => $isScrolled ?
-        theme.backgrounds.headerScrolled : theme.colors.transparent};
+    theme.backgrounds.headerScrolled : theme.colors.transparent};
   transition: ${({ theme }) => theme.transition.all};
   z-index: 2;
 `;
@@ -44,14 +44,17 @@ export const Menu = styled.ul`
   list-style: none;
   padding: ${({ theme }) => theme.spacing.padding.none};
   margin: 0;
-  opacity: 0;
-  transform: translateX(100%);
+  opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
+  transform: ${({$isOpen}) => ($isOpen ? 'translateX(0)' : 'translateX(100%)')};
+  background: ${({ theme }) => theme.backgrounds.menuMobile};
   transition: ${({ theme }) => theme.transition.all};
+  z-index: 9999;
 
   @media (min-width: 1024px) {
     position: static;
     flex-direction: row;
     transform: none;
+     background: ${({ theme }) => theme.colors.transparent};
     opacity: 1;
     gap: ${({ theme }) => theme.spacing.gap.base};
   }
@@ -65,7 +68,7 @@ export const MenuItem = styled.li`
 export const MenuLink = styled.a`
   display: block;
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.textMain};
+  color: ${({ theme }) => theme.colors.textWhite};
   font-size: ${({ theme }) => theme.font.sizes.lg};
   padding: ${({ theme }) => theme.spacing.padding.lg};
   transition: ${({ theme }) => theme.transition.color};
@@ -73,7 +76,8 @@ export const MenuLink = styled.a`
 
    @media (min-width: 1024px) {
     position: relative;
-    font-size: ${({theme}) => theme.font.sizes.sm};
+    font-size: ${({ theme }) => theme.font.sizes.sm};
+    color: ${({ theme }) => theme.colors.textMain};
   }
 `;
 
@@ -87,8 +91,9 @@ export const Controls = styled.div`
 
 export const ThemeToggleButton = styled.button`
   position: relative;
-  width: 2.5rem;
   height: 2.5rem;
+  line-height: 2.5rem;
+  font-size: 30px;
   background: none;
   border: none;
   color: ${({ theme }) => theme.colors.accent};
@@ -130,7 +135,7 @@ export const LangOptions = styled.ul`
   border: 2px solid ${({ theme }) => theme.colors.textMain};
   border-radius: ${({ theme }) => theme.borders.radius.sm};
   list-style: none;
-  display: none;
+  display: ${({ $isOpen }) => $isOpen ? 'block' : 'none'};
   flex-direction: column;
   padding: ${({ theme }) => theme.spacing.padding.none};
   margin-top: ${({ theme }) => theme.spacing.margin.topSm};
@@ -141,6 +146,15 @@ export const LangOption = styled.li`
   cursor: pointer;
   gap: ${({ theme }) => theme.spacing.gap.sm};
 `;
+
+export const MobileHamburger = styled.div`
+  display: block;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+`;
+
 
 
 

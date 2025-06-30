@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "hamburger-react": "^2.5.2",
+    "motion": "^12.19.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "styled-components": "^6.1.19"

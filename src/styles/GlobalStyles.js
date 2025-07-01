@@ -19,7 +19,7 @@ body {
     background: ${({ theme }) => theme.backgrounds.main};
     color: ${({ theme }) => theme.colors.textMain};
     transition: ${({ theme }) => theme.transition.all};
-    height: 200vh;
+    height: 100vh;
 }
 a {
     text-decoration: none;

@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { motion } from "motion/react";
 
 export const HeaderWrapper = styled.header`
   position: fixed;
@@ -20,7 +21,7 @@ gap: ${({ theme }) => theme.spacing.gap.base};
 padding: ${({ theme }) => theme.spacing.padding.headerNav};
 `;
 
-export const Logo = styled.a`
+export const Logo = styled(motion.a)`
   margin-right: auto;
   font-family: ${({ theme }) => theme.font.main};
   font-size: ${({ theme }) => theme.font.sizes.lg};
@@ -60,7 +61,7 @@ export const Menu = styled.ul`
   }
 `;
 
-export const MenuItem = styled.li`
+export const MenuItem = styled(motion.li)`
   margin: 0;
   padding: ${({ theme }) => theme.spacing.padding.none};
 `;
@@ -89,7 +90,7 @@ export const Controls = styled.div`
  padding: ${({ theme }) => theme.spacing.padding.base};
 `;
 
-export const ThemeToggleButton = styled.button`
+export const ThemeToggleButton = styled(motion.button)`
   position: relative;
   height: 2.5rem;
   line-height: 2.5rem;
@@ -103,7 +104,7 @@ export const ThemeToggleButton = styled.button`
   outline: none;
 `;
 
-export const LangDropdown = styled.div`
+export const LangDropdown = styled(motion.div)`
   position: relative;
   z-index: 1;
 `;
@@ -147,7 +148,7 @@ export const LangOption = styled.li`
   gap: ${({ theme }) => theme.spacing.gap.sm};
 `;
 
-export const MobileHamburger = styled.div`
+export const MobileHamburger = styled(motion.div)`
   display: block;
 
   @media (min-width: 1024px) {

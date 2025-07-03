@@ -1,5 +1,6 @@
 import { Squash as Hamburger } from 'hamburger-react';
 import { useHeaderLogic } from './useHeaderLogic';
+import { useLanguage } from '../../i18n/LanguageContext';
 import {
     HeaderWrapper, Nav, Logo, Menu, MenuItem, MenuLink, Controls, ThemeToggleButton,
     LangDropdown, LangButton, FlagIcon, LangCode, LangOptions, LangOption, MobileHamburger
@@ -20,6 +21,8 @@ const Header = ({ toggleTheme, isDark }) => {
         langRef,
     } = useHeaderLogic();
 
+    const { lang, setLang, t } = useLanguage();
+
     return (
         <HeaderWrapper $isScrolled={isScrolled}>
             <Nav role="navigation" aria-label="Main navigation" as={motion.nav}
@@ -28,11 +31,11 @@ const Header = ({ toggleTheme, isDark }) => {
                 animate="visible">
                 <Logo href="#hero" variants={itemVariants}>Seb.dev</Logo>
                 <Menu id="main-menu" $isOpen={isOpen} >
-                    <MenuItem variants={itemVariants}><MenuLink href="#hero">Home</MenuLink></MenuItem>
-                    <MenuItem variants={itemVariants}><MenuLink href="#about">About</MenuLink></MenuItem>
-                    <MenuItem variants={itemVariants}><MenuLink href="#skills">Skills</MenuLink></MenuItem>
-                    <MenuItem variants={itemVariants}><MenuLink href="#projects">Projects</MenuLink></MenuItem>
-                    <MenuItem variants={itemVariants}><MenuLink href="#contact">Contact</MenuLink></MenuItem>
+                    <MenuItem variants={itemVariants}><MenuLink href="#hero">{t("home")}</MenuLink></MenuItem>
+                    <MenuItem variants={itemVariants}><MenuLink href="#about">{t("about")}</MenuLink></MenuItem>
+                    <MenuItem variants={itemVariants}><MenuLink href="#skills">{t("skills")}</MenuLink></MenuItem>
+                    <MenuItem variants={itemVariants}><MenuLink href="#projects">{t("projects")}</MenuLink></MenuItem>
+                    <MenuItem variants={itemVariants}><MenuLink href="#contact">{t("contact")}</MenuLink></MenuItem>
                 </Menu>
                 <Controls>
                     <ThemeToggleButton onClick={toggleTheme} aria-label="Toggle dark mode" variants={itemVariants}>
@@ -63,14 +66,14 @@ const Header = ({ toggleTheme, isDark }) => {
                     <LangDropdown aria-label="Change language" onClick={handleLangOpen} ref={langRef} variants={itemVariants}>
                         <LangButton type="button" aria-haspopup="listbox"
                             aria-expanded="false">
-                            <FlagIcon src={gbIcon} alt="English" />
-                            <LangCode> EN</LangCode>
+                            <FlagIcon src={lang === "en" ? gbIcon : plIcon} alt={lang === "en" ? "English" : "Polski"} />
+                            <LangCode> {lang.toUpperCase()}</LangCode>
                         </LangButton>
                         <LangOptions role="listbox" $isOpen={isLangOpen}>
-                            <LangOption>
+                            <LangOption onClick={() => setLang("en")}>
                                 <FlagIcon src={gbIcon} alt="English" /> EN
                             </LangOption>
-                            <LangOption>
+                            <LangOption onClick={() => setLang("pl")}>
                                 <FlagIcon src={plIcon} alt="Polski" /> PL
                             </LangOption>
                         </LangOptions>

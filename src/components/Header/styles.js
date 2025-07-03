@@ -116,7 +116,7 @@ export const LangButton = styled.button`
   border-radius: ${({ theme }) => theme.borders.radius.sm};
   cursor: pointer;
   font-size: ${({ theme }) => theme.font.sizes.base};
-  padding: ${({theme}) => theme.spacing.padding.xs};
+  padding: ${({theme}) => theme.spacing.padding.sm};
 `;
 
 export const FlagIcon = styled.img`

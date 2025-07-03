@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { LanguageProvider } from './i18n/LanguageContext';
 import Intro from './components/Intro/Intro';
 import Header from './components/Header/Header';
 
@@ -18,7 +19,7 @@ const App = ({ toggleTheme, isDark }) => {
   }, [showIntro]);
 
   return (
-    <>
+    <LanguageProvider>
       {showIntro ? (
         <Intro onComplete={handleIntroComplete} />
       ) : (
@@ -26,7 +27,7 @@ const App = ({ toggleTheme, isDark }) => {
           <Header toggleTheme={toggleTheme} isDark={isDark} />
         </>
       )}
-    </>
+    </LanguageProvider>
   );
 };
 

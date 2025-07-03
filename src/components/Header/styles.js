@@ -46,7 +46,7 @@ export const Menu = styled.ul`
   padding: ${({ theme }) => theme.spacing.padding.none};
   margin: 0;
   opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
-  transform: ${({$isOpen}) => ($isOpen ? 'translateX(0)' : 'translateX(100%)')};
+  transform: ${({ $isOpen }) => ($isOpen ? 'translateX(0)' : 'translateX(100%)')};
   background: ${({ theme }) => theme.backgrounds.menuMobile};
   transition: ${({ theme }) => theme.transition.all};
   z-index: 9999;
@@ -110,17 +110,17 @@ export const LangDropdown = styled(motion.div)`
 `;
 
 export const LangButton = styled.button`
-  gap: ${({ theme }) => theme.spacing.gap.sm};
   background: transparent;
   border: 2px solid ${({ theme }) => theme.colors.accent};
   color: ${({ theme }) => theme.colors.accent};
   border-radius: ${({ theme }) => theme.borders.radius.sm};
   cursor: pointer;
-  font-size: ${({ theme }) => theme.font.sizes.lg};
+  font-size: ${({ theme }) => theme.font.sizes.base};
+  padding: ${({theme}) => theme.spacing.padding.xs};
 `;
 
 export const FlagIcon = styled.img`
-  width: 30px;
+  width: 26px;
   height: auto;
 `;
 
@@ -132,20 +132,26 @@ export const LangOptions = styled.ul`
   position: absolute;
   top: 100%;
   right: 0;
+  left: 0;
   background: ${({ theme }) => theme.backgrounds.main};
   border: 2px solid ${({ theme }) => theme.colors.textMain};
   border-radius: ${({ theme }) => theme.borders.radius.sm};
   list-style: none;
   display: ${({ $isOpen }) => $isOpen ? 'block' : 'none'};
   flex-direction: column;
-  padding: ${({ theme }) => theme.spacing.padding.none};
   margin-top: ${({ theme }) => theme.spacing.margin.topSm};
 `;
 
 export const LangOption = styled.li`
-  padding: ${({ theme }) => theme.spacing.padding.sm};
+  padding: ${({theme}) => theme.spacing.padding.xs};
+  font-size: ${({ theme }) => theme.font.sizes.base};
   cursor: pointer;
-  gap: ${({ theme }) => theme.spacing.gap.sm};
+  transition: ${({theme}) => theme.transition.background};
+  @media (min-width: 1024px) {
+    &:hover {
+      background: ${({ theme }) => theme.colors.accentHover};
+    }
+  }
 `;
 
 export const MobileHamburger = styled(motion.div)`

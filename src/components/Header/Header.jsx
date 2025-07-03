@@ -1,67 +1,24 @@
-import { useEffect, useState, useRef } from 'react';
 import { Squash as Hamburger } from 'hamburger-react';
+import { useHeaderLogic } from './useHeaderLogic';
 import {
     HeaderWrapper, Nav, Logo, Menu, MenuItem, MenuLink, Controls, ThemeToggleButton,
     LangDropdown, LangButton, FlagIcon, LangCode, LangOptions, LangOption, MobileHamburger
 } from './styles';
+import { containerVariants, itemVariants } from './headerVariants';
 import gbIcon from '../../assets/icons/gb.svg';
 import plIcon from '../../assets/icons/pl.svg';
 import { motion, AnimatePresence } from "motion/react";
 
 const Header = ({ toggleTheme, isDark }) => {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
-    const [isLangOpen, setIsLangOpen] = useState(false);
-    const menuRef = useRef(null);
-    const langRef = useRef(null);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 30);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const handleIsOpen = () => {
-        setIsOpen(prev => !prev);
-    };
-
-    const handleLangOpen = () => {
-        setIsLangOpen(prev => !prev);
-    };
-
-    useEffect(() => {
-        const handleClickOutside = (e) => {
-            if (isOpen && !menuRef.current.contains(e.target)) {
-                setIsOpen(false);
-            }
-            if (isLangOpen && !langRef.current.contains(e.target)) {
-                setIsLangOpen(false);
-            }
-        };
-        document.addEventListener("mousedown", handleClickOutside);
-
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-
-    }, [isOpen, isLangOpen]);
-
-    const containerVariants = {
-        hidden: {},
-        visible: {
-            transition: {
-                staggerChildren: 0.1
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: -10 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }
-    };
-
+    const {
+        isScrolled,
+        isOpen,
+        isLangOpen,
+        handleIsOpen,
+        handleLangOpen,
+        menuRef,
+        langRef,
+    } = useHeaderLogic();
 
     return (
         <HeaderWrapper $isScrolled={isScrolled}>

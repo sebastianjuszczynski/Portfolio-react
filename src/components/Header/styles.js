@@ -19,6 +19,11 @@ align-items: center;
 justify-content: center;
 gap: ${({ theme }) => theme.spacing.gap.base};
 padding: ${({ theme }) => theme.spacing.padding.headerNav};
+
+@media (min-width: 768px) {
+  padding: ${({ theme }) => theme.spacing.padding.base};
+}
+
 `;
 
 export const Logo = styled(motion.a)`
@@ -29,6 +34,13 @@ export const Logo = styled(motion.a)`
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 2px;
+
+  @media (min-width: 768px) {
+   font-size: ${({ theme }) => theme.font.sizes.xl}; 
+  }
+  @media (min-width: 1024px) {
+  font-size: ${({ theme }) => theme.font.sizes.base}; 
+}
 `;
 
 export const Menu = styled.ul`
@@ -75,10 +87,36 @@ export const MenuLink = styled.a`
   transition: ${({ theme }) => theme.transition.color};
   white-space: nowrap;
 
-   @media (min-width: 1024px) {
+  @media (max-width: 360px) {
+    font-size: ${({ theme }) => theme.font.sizes.base};
+  }
+
+  @media (min-width: 768px) {
+    font-size: ${({ theme }) => theme.font.sizes.xl};
+  }
+
+  @media (min-width: 1024px) {
     position: relative;
     font-size: ${({ theme }) => theme.font.sizes.sm};
     color: ${({ theme }) => theme.colors.textMain};
+
+    &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 80%;
+    height: 1.5px;
+    background: ${({ theme }) => theme.gradients.accentHover};
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: ${({ theme }) => theme.transition.transform};
+    }
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
   }
 `;
 
@@ -87,7 +125,7 @@ export const Controls = styled.div`
   align-items: center;
   justify-content: center;
   gap: ${({ theme }) => theme.spacing.gap.sm};
- padding: ${({ theme }) => theme.spacing.padding.base};
+  padding: ${({ theme }) => theme.spacing.padding.headerControls};
 `;
 
 export const ThemeToggleButton = styled(motion.button)`

@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLanguage } from '../../i18n/LanguageContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faGithub, faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
@@ -10,22 +11,35 @@ import {
 
 const Hero = () => {
     const [clicked, setClicked] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const { t } = useLanguage();
 
     return (
         <Section>
             <SectionContainer>
-                <ImageContainer $clicked={clicked} onClick={() => setClicked(!clicked)}>
+                <ImageContainer $clicked={clicked}
+                onClick={isMobile ? () => setClicked(!clicked) : undefined}
+                onMouseEnter={!isMobile ? () => setClicked(!clicked) : undefined}
+                onMouseLeave={!isMobile ? () => setClicked(!clicked) : undefined}>
                     <Image src={heroImage}
                         alt="Developer writing code" />
                 </ImageContainer>
                 <TextContainer>
                     <TextTitle>
-                        Hi, I'm
+                        {t("titleSpan")}
                         <TitleSpan>Sebastian</TitleSpan>
                     </TextTitle>
-                    <TextDescription>Frontend Developer focused on
-                        simplicity and speed</TextDescription>
+                    <TextDescription>{t("titleDescription")}</TextDescription>
                     <SocialsContainer>
                         <SocialItem>
                             <SocialLink href="https://www.linkedin.com/in/sebastian-juszczynski-52982a243/" target="_blank"

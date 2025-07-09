@@ -10,6 +10,11 @@ export const Section = styled.section`
     gap: ${({ theme }) => theme.spacing.gap.base};
     color: ${({ theme }) => theme.colors.textMain};
     height: 100vh;
+
+    @media (min-width: 1024px) {
+        align-items: center;
+        justify-content: space-around;
+    };
 `;
 
 export const SectionContainer = styled.div`
@@ -20,6 +25,12 @@ export const SectionContainer = styled.div`
     padding: ${({ theme }) =>  theme.spacing.padding.lg };
     gap: ${({ theme }) => theme.spacing.gap.base};
     margin-top: 60px;
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 85%;
+    }
 `;
 
 export const ImageContainer = styled.div`
@@ -30,11 +41,29 @@ export const ImageContainer = styled.div`
     transform: ${({ $clicked }) => $clicked ? 'skewX(0deg) skewY(0deg)' : 'skewX(-4deg) skewY(4deg)'};
     box-shadow: ${({ $clicked, theme }) => $clicked ? `0 0 0 2px ${theme.colors.accentHover}` : 'none' };
     transition: ${({ theme }) => theme.transition.all};
+
+    @media (min-width: 768px) {
+         width: 70%;
+    }
+
+    @media (min-width: 1024px) {
+        width: 40%;
+        padding: ${({ theme }) =>  theme.spacing.padding.xxl };
+    }
 `;
 
 export const Image = styled.img`
     max-width: 85%;
     height: auto;
+
+    @media (max-width: 360px) {
+        max-width: 70%;
+    }
+
+    @media (min-width: 1024px) {
+        max-width: 300px;
+        height: auto;
+    }
 `;
 
 export const TextContainer = styled.div`
@@ -43,8 +72,13 @@ export const TextContainer = styled.div`
     align-items: center;
     justify-content: center;
     gap: ${({ theme }) => theme.spacing.gap.base};
-`;
 
+    @media (min-width: 1024px) {
+        order: -1;
+        text-align: left;
+        align-items: flex-start;
+    }
+`;
 
 export const TextTitle = styled.h2`
     margin-top: ${({ theme }) => theme.spacing.margin.topLg};
@@ -52,6 +86,10 @@ export const TextTitle = styled.h2`
     font-size: ${({ theme }) => theme.font.sizes.xxl};
     font-weight: 600;
     line-height: 1.2;
+
+    @media (max-width: 360px) {
+        font-size: ${({ theme }) => theme.font.sizes.xl};
+    }
 `;
 
 export const TitleSpan = styled.span`
@@ -67,6 +105,10 @@ export const TextDescription = styled.p`
     font-size: ${({ theme }) => theme.font.sizes.lg};
     max-width: 32ch;
     letter-spacing: 2px;
+
+    @media (max-width: 360px) {
+        font-size: ${({ theme }) => theme.font.sizes.base};
+    }
 `;
 
 export const SocialsContainer = styled.ul`
@@ -76,6 +118,11 @@ export const SocialsContainer = styled.ul`
     margin: ${({ theme }) => theme.spacing.margin.center};
     padding: ${({ theme }) =>  theme.spacing.padding.none };
     gap: ${({ theme }) => theme.spacing.gap.base};
+
+    @media (min-width: 1024px) {
+        justify-content: flex-start;
+        margin: 0;
+    }
 `;
 
 export const SocialItem = styled.li`
@@ -126,12 +173,16 @@ export const SocialIcon = styled.span`
     color: ${({ theme }) => theme.backgrounds.headerScrolled};
   }
 
+  @media (max-width: 360px) {
+    width: 26px;
+    height: 26px;
+  }
+
 `;
 
 export const ArrowContainer = styled.div`
     position: relative;
     display: inline-block;
-    /* margin-bottom: ${({ theme }) => theme.spacing.margin.bottomXl}; */
 `;
 
 export const Arrow = styled.a`

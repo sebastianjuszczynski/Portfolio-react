@@ -3,6 +3,7 @@ import { LanguageProvider } from './i18n/LanguageContext';
 import Intro from './components/Intro/Intro';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
+import About from './components/About/About';
 
 const App = ({ toggleTheme, isDark }) => {
   const [showIntro, setShowIntro] = useState(true);
@@ -27,6 +28,7 @@ const App = ({ toggleTheme, isDark }) => {
         <>
           <Header toggleTheme={toggleTheme} isDark={isDark} />
           <Hero />
+          <About />
         </>
       )}
     </LanguageProvider>

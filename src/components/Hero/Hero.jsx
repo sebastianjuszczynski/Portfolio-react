@@ -32,7 +32,7 @@ const Hero = () => {
                 onMouseEnter={!isMobile ? () => setClicked(!clicked) : undefined}
                 onMouseLeave={!isMobile ? () => setClicked(!clicked) : undefined}>
                     <Image src={heroImage}
-                        alt="Developer writing code" />
+                        alt="Developer writing code" loading="lazy"/>
                 </ImageContainer>
                 <TextContainer>
                     <TextTitle>

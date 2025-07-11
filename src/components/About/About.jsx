@@ -1,7 +1,7 @@
 import aboutImage from '../../assets/images/code-thinking.svg';
 import { useLanguage } from '../../i18n/LanguageContext';
-import { Section, SectionContainer, TextContainer, SectionSubheader, SubheaderSpan, 
-    SectionTitle, SectionDescription, SectionLink, ImageContainer, Image
+import SectionHeader from '../common/SectionHeader/SectionHeader';
+import { Section, SectionContainer, TextContainer, SectionDescription, SectionLink, ImageContainer, Image
 } from './styles';
 
 
@@ -11,11 +11,11 @@ const About = () => {
         <Section id="about">
             <SectionContainer>
                 <TextContainer>
-                    <SectionSubheader>
-                        {t("aboutSubheader")}
-                        <SubheaderSpan> {t("aboutSpan")}</SubheaderSpan>
-                    </SectionSubheader>
-                    <SectionTitle>{t("aboutTitle")}</SectionTitle>
+                    <SectionHeader
+                        sub={t("aboutSubheader")}
+                        span={t("aboutSpan")}
+                        title={t("aboutTitle")}
+                    />
                     <SectionDescription>{t('aboutDescription')}
                     </SectionDescription>
                     <SectionLink href="#contact">{t("aboutLink")}</SectionLink>

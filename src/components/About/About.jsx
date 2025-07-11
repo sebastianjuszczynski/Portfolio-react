@@ -1,13 +1,12 @@
 
 import AboutText from './AboutText';
 import AboutImage from './AboutImage';
-import {
-    Section, SectionContainer, TextContainer
-} from './styles';
+import { Section, SectionContainer } from '../common/Section/styles';
+import { TextContainer } from './styles';
 
 
-const About = () => (
-    <Section id="about">
+const About = ({ isDark }) => (
+    <Section $isDark={isDark} $align="left" id="about">
         <SectionContainer>
             <TextContainer>
                 <AboutText />

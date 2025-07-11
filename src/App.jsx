@@ -28,7 +28,7 @@ const App = ({ toggleTheme, isDark }) => {
         <>
           <Header toggleTheme={toggleTheme} isDark={isDark} />
           <Hero />
-          <About />
+          <About isDark={isDark}/>
         </>
       )}
     </LanguageProvider>

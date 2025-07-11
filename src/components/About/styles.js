@@ -1,30 +1,5 @@
 import styled from "styled-components";
 
-export const Section = styled.section`
-    background: ${({ theme }) => theme.backgrounds.secondary};
-    margin: ${({ theme }) => theme.spacing.margin.lg};
-    padding: ${({ theme }) => theme.spacing.padding.xl};
-    text-align: center;
-
-    @media (min-width: 1024px) {
-        text-align: left;
-        padding: ${({ theme }) => theme.spacing.padding.xxl};
-    }
-`;
-
-export const SectionContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: ${({ theme }) => theme.spacing.gap.base};
-
-    @media (min-width: 1024px) {
-        flex-direction: row;
-        gap: ${({ theme }) => theme.spacing.gap.lg};
-    }
-`;
-
 export const TextContainer = styled.div`
     @media (min-width: 1024px) {
         order: 1;

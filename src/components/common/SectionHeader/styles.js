@@ -23,7 +23,7 @@ export const Title = styled.h2`
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: ${({ theme }) => theme.colors.transparent};
-    margin: 0;
+    margin-bottom: ${({ theme}) => theme.spacing.margin.bottomSm};
 
     @media (max-width: 360px) {
         font-size: ${({ theme }) => theme.font.sizes.xl};

@@ -22,10 +22,9 @@ export const SectionContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: ${({ theme }) => theme.spacing.gap.base};
+    gap: ${({ theme }) => theme.spacing.gap.xl};
 
     @media (min-width: 1024px) {
-        flex-direction: row;
-        gap: ${({ theme }) => theme.spacing.gap.lg};
+        flex-direction: ${({ $direction }) => $direction || "row"};
     }
 `;

@@ -28,3 +28,9 @@ export const SectionContainer = styled.div`
         flex-direction: ${({ $direction }) => $direction || "row"};
     }
 `;
+
+export const TextContainer = styled.div`
+
+`;
+
+

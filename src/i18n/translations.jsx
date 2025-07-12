@@ -15,7 +15,11 @@ const translations = {
     skillsSubheader: "My",
     skillsSpan: " tech stack",
     skillsTitle: "Skills",
-    skillsDescription: "Visit the projects section to see the work done with these web technologies."
+    skillsDescription: "Visit the projects section to see the work done with these web technologies.",
+    projectsSubheader: "My",
+    projectsSpan: " work",
+    projectsTitle: "Projects",
+    projectsLink: "Visit project"
   },
   pl: {
     home: "Strona główna",
@@ -33,7 +37,11 @@ const translations = {
     skillsSubheader: "Mój",
     skillsSpan: " tech stack",
     skillsTitle: "Umiejętności",
-    skillsDescription: "Sprawdź sekcję z projektami, aby zobaczyć efekty pracy z tymi technologiami."
+    skillsDescription: "Sprawdź sekcję z projektami, aby zobaczyć efekty pracy z tymi technologiami.",
+    projectsSubheader: "Moje",
+    projectsSpan: " prace",
+    projectsTitle: "Projekty",
+    projectsLink: "Zobacz projekt"
   },
 };
 

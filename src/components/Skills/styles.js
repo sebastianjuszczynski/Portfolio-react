@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const TextContainer = styled.div`
-
-`;
-
 export const ImagesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);

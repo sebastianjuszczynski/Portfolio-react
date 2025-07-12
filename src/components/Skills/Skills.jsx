@@ -1,13 +1,13 @@
 import { useLanguage } from '../../i18n/LanguageContext';
-import { Section, SectionContainer } from '../common/Section/styles';
+import { Section, SectionContainer, TextContainer } from '../common/Section/styles';
 import SectionHeader from '../common/SectionHeader/SectionHeader.jsx';
 import { skillsData } from './skillsData.js';
-import { TextContainer, ImagesContainer, Image, SkillsDescription, SkillsItem } from './styles';
+import { ImagesContainer, Image, SkillsDescription, SkillsItem } from './styles';
 
 const Skills = () => {
     const { t } = useLanguage();
     return (
-        <Section id="skills">
+        <Section id="skills" $bg="transparent">
             <SectionContainer $direction="column">
                 <TextContainer>
                     <SectionHeader

@@ -1,5 +1,6 @@
 import moviesImg from '../../assets/images/movies-browser.png';
 import weatherImg from '../../assets/images/weather-app.png';
+import moviesVideo from '../../assets/video/movies-browser.mp4';
 
 
 export const dataProjects = [
@@ -10,7 +11,7 @@ export const dataProjects = [
             pl: "Aplikacja do przeglądania filmów z użyciem API."
         },
         image: moviesImg,
-        video: "assets/video/movies-browser.mp4",
+        video: moviesVideo,
         tech: ["html5", "css3", "javascript", "react", "redux"],
         link: "https://sebastianjuszczynski.github.io/movies-browser"
     },
@@ -21,7 +22,7 @@ export const dataProjects = [
       pl: "Prosta aplikacja pogodowa z wyszukiwaniem lokalizacji."
     },
     image: weatherImg,
-    video: "assets/video/movies-browser.mp4",
+    video: moviesVideo,
     tech: ["html5", "css3", "javascript"],
     link: "https://sebastianjuszczynski.github.io/Weather-App/"
   },

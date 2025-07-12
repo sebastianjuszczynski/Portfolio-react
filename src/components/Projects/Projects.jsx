@@ -3,14 +3,14 @@ import SectionHeader from '../common/SectionHeader/SectionHeader.jsx';
 import { dataProjects } from './dataProjects.js';
 import LinkIcon from '../../assets/icons/link.svg';
 import { Section, SectionContainer, TextContainer } from '../common/Section/styles.js';
-import { ProjectsContainer, ProjectCard, ProjectImage, ProjectVideo, ProjectContent, ProjectTitle, ProjectDescription, ProjectTech, TechImage, ProjectLink, LinkImage, LinkSpan} from './styles.js'
+import { ProjectsContainer, ProjectCard, ProjectImage, ProjectVideo, ProjectContent, ProjectTitle, ProjectDescription, ProjectTech, TechImage, ProjectLink, LinkImage, LinkSpan } from './styles.js'
 
 const Projects = () => {
     const { lang, t } = useLanguage();
 
     return (
         <Section id="projects">
-            <SectionContainer>
+            <SectionContainer $direction="column">
                 <TextContainer>
                     <SectionHeader
                         sub={t("projectsSubheader")}
@@ -20,7 +20,22 @@ const Projects = () => {
                 </TextContainer>
                 <ProjectsContainer>
                     {dataProjects.map(({ title, description, image, video, tech, link }) => (
-                        <ProjectCard key={title}>
+                        <ProjectCard
+                            key={title}
+                            onMouseEnter={e => {
+                                const video = e.currentTarget.querySelector("video");
+                                if (video) {
+                                    video.currentTime = 0;
+                                    video.play();
+                                }
+                            }}
+                            onMouseLeave={e => {
+                                const video = e.currentTarget.querySelector("video");
+                                if (video) {
+                                    video.pause();
+                                }
+                            }}
+                        >
                             <ProjectImage src={image}
                                 alt={title} loading="lazy" />
                             <ProjectVideo muted preload="none" loop playsInline>

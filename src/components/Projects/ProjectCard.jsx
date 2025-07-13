@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import useIsMobile from '../../hooks/useInMobile.js';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
 import LinkIcon from '../../assets/icons/link.svg';
 import {
@@ -10,17 +10,8 @@ import {
 
 
 const ProjectCard = ({ title, description, image, video, tech, link }) => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+    const isMobile = useIsMobile();
     const { lang, t } = useLanguage();
-
-        useEffect(() => {
-            const handleResize = () => {
-                setIsMobile(window.innerWidth < 768);
-            };
-    
-            window.addEventListener('resize', handleResize);
-            return () => window.removeEventListener('resize', handleResize);
-        }, []);
 
     return (
         <Card $isMobile={isMobile}

@@ -7,14 +7,12 @@ export const ProjectsContainer = styled.div`
     justify-content: center;
 `;
 
-
-export const ProjectImage = styled.img`
+export const MediaWrapper = styled.div`
+    position: relative;
     width: 100%;
-    height: auto;
+    aspect-ratio: 16 / 9;
     border-radius: ${({ theme }) => theme.borders.radius.sm};
-    background-position: center;
-    background-size: cover;
-    display: block;
+    overflow: hidden;
 
     @media (min-width: 768px) {
         width: 70%;
@@ -22,37 +20,39 @@ export const ProjectImage = styled.img`
     }
 
     @media (min-width: 1024px) {
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-        width: 100%;
-        max-width: 600px;
-        transition: ${({ theme }) => theme.transition.transform}; 
+        min-width: 300px;
     }
+`;
+
+export const ProjectImage = styled.img`
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+    border-radius: ${({ theme }) => theme.borders.radius.sm};
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+    z-index: 1;
 `;
 
 export const ProjectVideo = styled.video`
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     border-radius: ${({ theme }) => theme.borders.radius.sm};
-    background-position: center;
-    background-size: cover;
-    display: none;
-
-    @media (min-width: 768px) {
-        width: 70%;
-        margin: ${({ theme }) => theme.spacing.margin.center};
-    }
-
-    @media (min-width: 1024px) {
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-        width: 100%;
-        max-width: 600px;
-        transition: ${({ theme }) => theme.transition.transform}; 
-    }
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
 `;
 
 export const ProjectCard = styled.div`
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -73,11 +73,11 @@ export const ProjectCard = styled.div`
     }
 
     &:hover ${ProjectImage} {
-        display: none;
+        opacity: ${({ $isMobile }) => $isMobile ? "1" : "0"};
     }
 
     &:hover ${ProjectVideo} {
-        display: block;
+        opacity: ${({ $isMobile }) => $isMobile ? "0" : "1"};
     }
 `;
 

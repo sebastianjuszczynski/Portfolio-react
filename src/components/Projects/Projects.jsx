@@ -1,12 +1,12 @@
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
 import SectionHeader from '../common/SectionHeader/SectionHeader.jsx';
 import { dataProjects } from './dataProjects.js';
-import LinkIcon from '../../assets/icons/link.svg';
 import { Section, SectionContainer, TextContainer } from '../common/Section/styles.js';
-import { ProjectsContainer, ProjectCard, ProjectImage, ProjectVideo, ProjectContent, ProjectTitle, ProjectDescription, ProjectTech, TechImage, ProjectLink, LinkImage, LinkSpan } from './styles.js'
+import { ProjectsContainer } from './styles.js'
+import ProjectCard from './ProjectCard.jsx';
 
 const Projects = () => {
-    const { lang, t } = useLanguage();
+    const { t } = useLanguage();
 
     return (
         <Section id="projects">
@@ -19,47 +19,8 @@ const Projects = () => {
                     />
                 </TextContainer>
                 <ProjectsContainer>
-                    {dataProjects.map(({ title, description, image, video, tech, link }) => (
-                        <ProjectCard
-                            key={title}
-                            onMouseEnter={e => {
-                                const video = e.currentTarget.querySelector("video");
-                                if (video) {
-                                    video.currentTime = 0;
-                                    video.play();
-                                }
-                            }}
-                            onMouseLeave={e => {
-                                const video = e.currentTarget.querySelector("video");
-                                if (video) {
-                                    video.pause();
-                                }
-                            }}
-                        >
-                            <ProjectImage src={image}
-                                alt={title} loading="lazy" />
-                            <ProjectVideo muted preload="none" loop playsInline>
-                                <source src={video} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </ProjectVideo>
-                            <ProjectContent>
-                                <ProjectTitle>{title}</ProjectTitle>
-                                <ProjectDescription>{description[lang]}</ProjectDescription>
-                                <ProjectTech>
-                                    {tech.map(t => (
-                                        <TechImage key={t} src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${t}/${t}-original.svg`}
-                                            alt={`${t} logo`} loading="lazy" title={t} />
-                                    ))}
-                                </ProjectTech>
-                                <ProjectLink
-                                    href={link} target="_blank"
-                                    rel="noopener" aria-label={`Check ${title} website`}
-                                >
-                                    <LinkImage src={LinkIcon} />
-                                    <LinkSpan>{t("projectsLink")}</LinkSpan>
-                                </ProjectLink>
-                            </ProjectContent>
-                        </ProjectCard>
+                    {dataProjects.map((project) => (
+                        <ProjectCard key={project.title} {...project} />
                     ))}
                 </ProjectsContainer>
             </SectionContainer>

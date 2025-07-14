@@ -19,7 +19,17 @@ const translations = {
     projectsSubheader: "My",
     projectsSpan: " work",
     projectsTitle: "Projects",
-    projectsLink: "Visit project"
+    projectsLink: "Visit project",
+    contactSubheader: "Text",
+    contactSpan: " me",
+    contactTitle: "Contact",
+    submitButton: "Send",
+    contactName: "Your name",
+    contactEmail: "Your e-mail",
+    contactMessage: "Your message",
+    errorName: "Name must be at least 3 characters",
+    errorEmail: "Enter a valid email address",
+    errorMessage: "Message must be at least 10 characters",
   },
   pl: {
     home: "Strona główna",
@@ -41,7 +51,17 @@ const translations = {
     projectsSubheader: "Moje",
     projectsSpan: " prace",
     projectsTitle: "Projekty",
-    projectsLink: "Zobacz projekt"
+    projectsLink: "Zobacz projekt",
+    contactSubheader: "Napisz",
+    contactSpan: " do mnie",
+    contactTitle: "Kontakt",
+    submitButton: "Wyślij",
+    contactName: "Twoje imię",
+    contactEmail: "Twój e-mail",
+    contactMessage: "Twoja wiadomość",
+    errorName: "Imię musi mieć co najmniej 3 znaki",
+    errorEmail: "Wpisz poprawny adres e-mail",
+    errorMessage: "Wiadomość musi mieć co najmniej 10 znaków",
   },
 };
 

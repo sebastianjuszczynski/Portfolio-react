@@ -6,6 +6,7 @@ import Hero from './components/Hero/Hero';
 import About from './components/About/About';
 import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
+import Contact from './components/Contact/Contact';
 
 const App = ({ toggleTheme, isDark }) => {
   const [showIntro, setShowIntro] = useState(true);
@@ -33,6 +34,7 @@ const App = ({ toggleTheme, isDark }) => {
           <About isDark={isDark}/>
           <Skills />
           <Projects />
+          <Contact />
         </>
       )}
     </LanguageProvider>

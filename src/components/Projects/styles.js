@@ -65,6 +65,7 @@ export const ProjectCard = styled.div`
 
     @media (min-width: 768px) {
         align-items: center;
+        width: 70%;
     }
 
     @media (min-width: 1024px) {

@@ -42,11 +42,19 @@ export const Input = styled.input`
     border-radius: ${({ theme }) => theme.borders.radius.lg};
     background-color: ${({ theme }) => theme.colors.inputs};
     color: ${({ theme }) => theme.colors.textSecondary};
-    border: 2px solid ${({ theme }) => theme.colors.accentHover};
+    border: ${({ theme, $error, $valid}) => {
+        if ($error) return `2px solid ${theme.colors.error}`;
+        if ($valid) return `2px solid ${theme.colors.valid}`;
+        return `2px solid ${theme.colors.accentHover}`
+    }}; 
     
 
     &:focus {
-        outline: ${({ theme }) => theme.borders.focus(theme)}
+        outline: ${({ theme, $error, $valid}) => {
+            if ($error) return theme.borders.error(theme);
+            if ($valid) return theme.borders.valid(theme);
+            return theme.borders.focus(theme)
+        }};
     }
 
 `;
@@ -58,23 +66,31 @@ export const Textarea = styled.textarea`
     border-radius: ${({ theme }) => theme.borders.radius.lg};
     background-color: ${({ theme }) => theme.colors.inputs};
     color: ${({ theme }) => theme.colors.textSecondary};
-    border: 2px solid ${({ theme }) => theme.colors.accentHover};
+    border: ${({ theme, $error, $valid}) => {
+        if ($error) return `2px solid ${theme.colors.error}`;
+        if ($valid) return `2px solid ${theme.colors.valid}`;
+        return `2px solid ${theme.colors.accentHover}`
+    }}; 
     resize: none;
 
     &:focus {
-        outline: ${({ theme }) => theme.borders.focus(theme)}
+        outline: ${({ theme, $error, $valid}) => {
+            if ($error) return theme.borders.error(theme);
+            if ($valid) return theme.borders.valid(theme);
+            return theme.borders.focus(theme)
+        }};
     }
 `;
 
 export const ErrorMessage = styled.small`
     display: block;
-    visibility: hidden;
+    visibility: ${({ $error }) => $error ? "visible" : "hidden"};
     min-height: 1rem;
     line-height: 1rem;
-    color: #e53935;
+    color: ${({ theme }) => theme.colors.error};
     font-size: 0.85rem;
     text-align: left;
-    opacity: 0;
+    opacity: ${({ $error }) => ($error ? 1 : 0)};
     transition: ${({ theme }) => theme.transition.opacity};
 `;
 

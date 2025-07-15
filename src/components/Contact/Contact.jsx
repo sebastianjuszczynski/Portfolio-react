@@ -107,7 +107,7 @@ useEffect(() => {
 
     return (
         <Section id="contact">
-            <SectionContainer>
+            <SectionContainer $direction="column">
                 <TextContainer>
                     <SectionHeader
                         sub={t("contactSubheader")}
@@ -129,10 +129,12 @@ useEffect(() => {
                                         placeholder={t(i18n)}
                                         value={formData[name]}
                                         onChange={handleChange}
+                                        $error={formTriedSubmit &&!!errors[name]}
+                                        $valid={formTriedSubmit && formData[name] && !errors[name]}
                                         required
                                     />
 
-                                    <ErrorMessage aria-live="polite"></ErrorMessage>
+                                    <ErrorMessage $error={formTriedSubmit && !!errors[name]} aria-live="polite">{errors[name]}</ErrorMessage>
                                 </InputWrapper>
                             )}
                     </InputsWrapper>
@@ -150,9 +152,11 @@ useEffect(() => {
                                     value={formData[name]}
                                     onChange={handleChange}
                                     rows="6"
+                                    $error={formTriedSubmit && !!errors[name]}
+                                    $valid={formTriedSubmit && formData[name] && !errors[name]}
                                 >
                                 </Textarea>
-                                <ErrorMessage aria-live="polite"></ErrorMessage>
+                                <ErrorMessage $error={formTriedSubmit && !!errors[name]} aria-live="polite">{errors[name]}</ErrorMessage>
                             </TextareaWrapper>
                         )}
 

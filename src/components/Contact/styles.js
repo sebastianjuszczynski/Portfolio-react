@@ -124,7 +124,7 @@ export const SubmitButton = styled.button`
 `;
 
 export const FormStatus = styled.div`
-    opacity: ${({ children }) => (children ? 1 : 0)};
+    opacity: ${({ $show }) => ($show ? 1 : 0)};
     transition: ${({ theme }) => theme.transition.opacity};
     text-align: left;
     font-weight: bold;

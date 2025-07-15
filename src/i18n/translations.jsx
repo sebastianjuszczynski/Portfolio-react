@@ -30,6 +30,8 @@ const translations = {
     errorName: "Name must be at least 3 characters",
     errorEmail: "Enter a valid email address",
     errorMessage: "Message must be at least 10 characters",
+    formSuccess: "✅ Message sent",
+    formError: "❌ Ooops...Something went wrong..."
   },
   pl: {
     home: "Strona główna",
@@ -62,6 +64,8 @@ const translations = {
     errorName: "Imię musi mieć co najmniej 3 znaki",
     errorEmail: "Wpisz poprawny adres e-mail",
     errorMessage: "Wiadomość musi mieć co najmniej 10 znaków",
+    formSuccess: "✅ Wiadomość wysłana",
+    formError: "❌ Ooops...Coś poszło nie tak..."
   },
 };
 

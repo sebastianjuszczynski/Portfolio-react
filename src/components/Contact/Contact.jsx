@@ -6,10 +6,10 @@ import {
     Form, InputsWrapper, InputWrapper, TextareaWrapper, LabelHidden, Input,
     Textarea, ErrorMessage, SubmitButton, FormStatus
 } from './styles.js';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Contact = () => {
-    const { lang, t } = useLanguage();
+    const { t } = useLanguage();
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -70,35 +70,40 @@ const Contact = () => {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
   e.preventDefault();
   setFormTriedSubmit(true);
+
   const isValid = validateForm();
 
   if (!isValid) {
     return; 
   }
   
-  console.log("Wysyłanie formularza:", formData);
+  try {
+    const response = await fetch("https://formspree.io/f/xbloydej", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
 
-  setFormData({
-    name: "",
-    email: "",
-    message: ""
-  });
-  setErrors({});
-  setStatusMessage("Formularz został wysłany!");
-};
-
-useEffect(() => {
-  if (statusMessage) {
-    const timer = setTimeout(() => {
-      setStatusMessage(""); 
-    }, 2000); 
-
-    return () => clearTimeout(timer);
+    if (response.ok) {
+      setStatusMessage(t("formSuccess"));
+      setFormData({ name: "", email: "", message: "" });
+      setErrors({});
+      setFormTriedSubmit(false);
+    } else {
+      setStatusMessage(t("formError"));
+    }
+  } catch (err) {
+    setStatusMessage(t("formError"));
   }
-}, [statusMessage]);
+
+  setTimeout(() => setStatusMessage(""), 3000);
+};
 
 
 
@@ -161,7 +166,7 @@ useEffect(() => {
                         )}
 
                     <SubmitButton type="submit">{t("submitButton")}</SubmitButton>
-                    <FormStatus>{statusMessage}</FormStatus>
+                    <FormStatus $show={!!statusMessage} aria-live="polite">{statusMessage}</FormStatus>
                 </Form>
             </SectionContainer>
         </Section>

@@ -9,7 +9,7 @@ import {
 import { useState, useEffect } from "react";
 
 const Contact = () => {
-    const { t } = useLanguage();
+    const { lang, t } = useLanguage();
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -41,15 +41,15 @@ const Contact = () => {
 
     const validateField = (name, value) => {
         if (name === "name" && value.trim().length < 3) {
-            return t("errorName");
+            return "errorName";
         }
 
         if (name === "email" && !validateEmail(value)) {
-            return t("errorEmail");
+            return "errorEmail";
         }
 
         if (name === "message" && value.trim().length < 10) {
-            return t("errorMessage");
+            return "errorMessage";
         }
 
         return "";
@@ -134,7 +134,7 @@ useEffect(() => {
                                         required
                                     />
 
-                                    <ErrorMessage $error={formTriedSubmit && !!errors[name]} aria-live="polite">{errors[name]}</ErrorMessage>
+                                    <ErrorMessage $error={formTriedSubmit && !!errors[name]} aria-live="polite">{errors[name] ? t(errors[name]) : ""}</ErrorMessage>
                                 </InputWrapper>
                             )}
                     </InputsWrapper>
@@ -156,7 +156,7 @@ useEffect(() => {
                                     $valid={formTriedSubmit && formData[name] && !errors[name]}
                                 >
                                 </Textarea>
-                                <ErrorMessage $error={formTriedSubmit && !!errors[name]} aria-live="polite">{errors[name]}</ErrorMessage>
+                                <ErrorMessage $error={formTriedSubmit && !!errors[name]} aria-live="polite">{errors[name] ? t(errors[name]) : ""}</ErrorMessage>
                             </TextareaWrapper>
                         )}
 

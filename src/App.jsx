@@ -7,6 +7,7 @@ import About from './components/About/About';
 import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
+import FooterComponent from './components/Footer/FooterComponent';
 
 const App = ({ toggleTheme, isDark }) => {
   const [showIntro, setShowIntro] = useState(true);
@@ -35,6 +36,7 @@ const App = ({ toggleTheme, isDark }) => {
           <Skills />
           <Projects />
           <Contact />
+          <FooterComponent />
         </>
       )}
     </LanguageProvider>

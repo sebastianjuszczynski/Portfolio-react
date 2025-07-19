@@ -5,7 +5,7 @@ import {
     HeaderWrapper, Nav, Logo, Menu, MenuItem, MenuLink, Controls, ThemeToggleButton,
     LangDropdown, LangButton, FlagIcon, LangCode, LangOptions, LangOption, MobileHamburger
 } from './styles';
-import { containerVariants, itemVariants } from './headerVariants';
+import { headerContainerVariants, headerItemVariants } from '../common/Animations/animationsVariants';
 import gbIcon from '../../assets/icons/gb.svg';
 import plIcon from '../../assets/icons/pl.svg';
 import { motion, AnimatePresence } from "motion/react";
@@ -26,19 +26,20 @@ const Header = ({ toggleTheme, isDark }) => {
     return (
         <HeaderWrapper $isScrolled={isScrolled}>
             <Nav role="navigation" aria-label="Main navigation"
-                variants={containerVariants}
+                variants={headerContainerVariants}
                 initial="hidden"
-                animate="visible">
-                <Logo href="#hero" variants={itemVariants}>Seb.dev</Logo>
+                animate="visible"
+                >
+                <Logo href="#hero" variants={headerItemVariants}>Seb.dev</Logo>
                 <Menu id="main-menu" $isOpen={isOpen} >
-                    <MenuItem variants={itemVariants}><MenuLink href="#hero">{t("home")}</MenuLink></MenuItem>
-                    <MenuItem variants={itemVariants}><MenuLink href="#about">{t("about")}</MenuLink></MenuItem>
-                    <MenuItem variants={itemVariants}><MenuLink href="#skills">{t("skills")}</MenuLink></MenuItem>
-                    <MenuItem variants={itemVariants}><MenuLink href="#projects">{t("projects")}</MenuLink></MenuItem>
-                    <MenuItem variants={itemVariants}><MenuLink href="#contact">{t("contact")}</MenuLink></MenuItem>
+                    <MenuItem variants={headerItemVariants}><MenuLink href="#hero">{t("home")}</MenuLink></MenuItem>
+                    <MenuItem variants={headerItemVariants}><MenuLink href="#about">{t("about")}</MenuLink></MenuItem>
+                    <MenuItem variants={headerItemVariants}><MenuLink href="#skills">{t("skills")}</MenuLink></MenuItem>
+                    <MenuItem variants={headerItemVariants}><MenuLink href="#projects">{t("projects")}</MenuLink></MenuItem>
+                    <MenuItem variants={headerItemVariants}><MenuLink href="#contact">{t("contact")}</MenuLink></MenuItem>
                 </Menu>
                 <Controls>
-                    <ThemeToggleButton onClick={toggleTheme} aria-label="Toggle dark mode" variants={itemVariants}>
+                    <ThemeToggleButton onClick={toggleTheme} aria-label="Toggle dark mode" variants={headerItemVariants}>
                         <AnimatePresence mode="wait">
                             {isDark ? (
                                 <motion.span
@@ -63,7 +64,7 @@ const Header = ({ toggleTheme, isDark }) => {
                             )}
                         </AnimatePresence>
                     </ThemeToggleButton>
-                    <LangDropdown aria-label="Change language" onClick={handleLangOpen} ref={langRef} variants={itemVariants}>
+                    <LangDropdown aria-label="Change language" onClick={handleLangOpen} ref={langRef} variants={headerItemVariants}>
                         <LangButton type="button" aria-haspopup="listbox"
                             aria-expanded="false">
                             <FlagIcon src={lang === "en" ? gbIcon : plIcon} alt={lang === "en" ? "English" : "Polski"} />
@@ -78,7 +79,7 @@ const Header = ({ toggleTheme, isDark }) => {
                             </LangOption>
                         </LangOptions>
                     </LangDropdown>
-                    <MobileHamburger ref={menuRef} variants={itemVariants}>
+                    <MobileHamburger ref={menuRef} variants={headerItemVariants}>
                         <Hamburger rounded toggled={isOpen} toggle={handleIsOpen} aria-expanded={handleIsOpen} />
                     </MobileHamburger>
                 </Controls>

@@ -30,7 +30,7 @@ const App = ({ toggleTheme, isDark }) => {
         <Intro onComplete={handleIntroComplete} />
       ) : (
         <>
-          <Header toggleTheme={toggleTheme} isDark={isDark} />
+          <Header toggleTheme={toggleTheme} isDark={isDark}/>
           <Hero />
           <About isDark={isDark}/>
           <Skills />

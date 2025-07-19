@@ -6,9 +6,10 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import heroImage from '../../assets/images/building-a-website.svg';
 import {
     Section, SectionContainer, ImageContainer, Image, TextContainer, TextTitle, TitleSpan, TextDescription,
-    SocialsContainer, ArrowContainer, Arrow
+    SocialsContainer, ArrowContainer, Arrow, AnimationWrapper
 } from './styles'
 import SocialsIcons from '../common/SocialsIcons/SocialsIcons';
+import { heroContainerVariants, heroItemVariants, arrowVariants } from '../common/Animations/animationsVariants'
 
 const Hero = () => {
     const [clicked, setClicked] = useState(false);
@@ -18,26 +19,37 @@ const Hero = () => {
 
     return (
         <Section>
-            <SectionContainer>
-                <ImageContainer $clicked={clicked}
-                    onClick={isMobile ? () => setClicked(!clicked) : undefined}
-                    onMouseEnter={!isMobile ? () => setClicked(!clicked) : undefined}
-                    onMouseLeave={!isMobile ? () => setClicked(!clicked) : undefined}>
-                    <Image src={heroImage}
-                        alt="Developer writing code" loading="lazy"/>
-                </ImageContainer>
+            <SectionContainer
+                variants={heroContainerVariants}
+                initial="hidden"
+                animate="visible">
+                <AnimationWrapper
+                    variants={heroItemVariants}>
+                    <ImageContainer
+                        $clicked={clicked}
+                        onClick={isMobile ? () => setClicked(!clicked) : undefined}
+                        onMouseEnter={!isMobile ? () => setClicked(true) : undefined}
+                        onMouseLeave={!isMobile ? () => setClicked(false) : undefined}
+                    >
+                        <Image src={heroImage} alt="Developer writing code" loading="lazy" />
+                    </ImageContainer>
+                </AnimationWrapper>
                 <TextContainer>
-                    <TextTitle>
+                    <TextTitle variants={heroItemVariants}>
                         {t("titleSpan")}
-                        <TitleSpan>Sebastian</TitleSpan>
+                        <TitleSpan variants={heroItemVariants}>Sebastian</TitleSpan>
                     </TextTitle>
-                    <TextDescription>{t("titleDescription")}</TextDescription>
-                    <SocialsContainer>
+                    <TextDescription variants={heroItemVariants}>{t("titleDescription")}</TextDescription>
+                    <SocialsContainer variants={heroItemVariants}>
                         <SocialsIcons />
                     </SocialsContainer>
                 </TextContainer>
             </SectionContainer>
-            <ArrowContainer>
+            <ArrowContainer
+                variants={arrowVariants}
+                initial="hidden"
+                animate="visible"
+            >
                 <Arrow href="#about" aria-label="Scroll to skills section">
                     <FontAwesomeIcon icon={faAngleDown} bounce />
                 </Arrow>

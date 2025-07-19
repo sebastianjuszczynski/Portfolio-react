@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import useIsMobile from '../../hooks/useInMobile.js';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
 import LinkIcon from '../../assets/icons/link.svg';
@@ -6,15 +8,23 @@ import {
     ProjectVideo, MediaWrapper, ProjectContent,
     ProjectTitle, ProjectDescription, ProjectTech,
     TechImage, ProjectLink, LinkImage, LinkSpan
-} from './styles.js'
+} from './styles.js';
+import { containerVariants, itemVariants } from '../common/Animations/animationsVariants';
 
 
 const ProjectCard = ({ title, description, image, video, tech, link }) => {
     const isMobile = useIsMobile();
     const { lang, t } = useLanguage();
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: '-200px' });
 
     return (
-        <Card $isMobile={isMobile}
+        <Card
+            as={motion.div}
+            ref={ref}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"} $isMobile={isMobile}
             onMouseEnter={e => {
                 const video = e.currentTarget.querySelector("video");
                 if (video) {
@@ -29,7 +39,7 @@ const ProjectCard = ({ title, description, image, video, tech, link }) => {
                 }
             }}
         >
-            <MediaWrapper>
+            <MediaWrapper as={motion.div} variants={itemVariants}>
                 <ProjectImage src={image}
                     alt={title} loading="lazy" />
                 <ProjectVideo muted preload="none" loop playsInline loading="lazy">
@@ -37,16 +47,16 @@ const ProjectCard = ({ title, description, image, video, tech, link }) => {
                     Your browser does not support the video tag.
                 </ProjectVideo>
             </MediaWrapper>
-            <ProjectContent>
-                <ProjectTitle>{title}</ProjectTitle>
-                <ProjectDescription>{description[lang]}</ProjectDescription>
-                <ProjectTech>
+            <ProjectContent as={motion.div} variants={itemVariants}>
+                <ProjectTitle as={motion.div} variants={itemVariants}>{title}</ProjectTitle>
+                <ProjectDescription as={motion.div} variants={itemVariants}>{description[lang]}</ProjectDescription>
+                <ProjectTech as={motion.div} variants={itemVariants}>
                     {tech.map(t => (
                         <TechImage key={t} src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${t}/${t}-original.svg`}
                             alt={`${t} logo`} loading="lazy" title={t} aria-label={`Technology: ${t}`} />
                     ))}
                 </ProjectTech>
-                <ProjectLink
+                <ProjectLink as={motion.div} variants={itemVariants}
                     href={link} target="_blank"
                     rel="noopener" aria-label={`Check ${title} website`}
                 >

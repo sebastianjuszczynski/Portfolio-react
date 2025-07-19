@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from 'framer-motion'
 
 export const Form = styled.form`
     display: flex;
@@ -35,14 +36,14 @@ export const LabelHidden = styled.label`
     border: 0;
 `;
 
-export const Input = styled.input`
+export const Input = styled(motion.input)`
     padding: ${({ theme }) => theme.spacing.padding.inputs};
     font-weight: 600;
     line-height: 1.15;
     border-radius: ${({ theme }) => theme.borders.radius.lg};
     background-color: ${({ theme }) => theme.colors.inputs};
     color: ${({ theme }) => theme.colors.textSecondary};
-    border: ${({ theme, $error, $valid}) => {
+    border: ${({ theme, $error, $valid }) => {
         if ($error) return `2px solid ${theme.colors.error}`;
         if ($valid) return `2px solid ${theme.colors.valid}`;
         return `2px solid ${theme.colors.accentHover}`
@@ -50,23 +51,23 @@ export const Input = styled.input`
     
 
     &:focus {
-        outline: ${({ theme, $error, $valid}) => {
-            if ($error) return theme.borders.error(theme);
-            if ($valid) return theme.borders.valid(theme);
-            return theme.borders.focus(theme)
-        }};
+        outline: ${({ theme, $error, $valid }) => {
+        if ($error) return theme.borders.error(theme);
+        if ($valid) return theme.borders.valid(theme);
+        return theme.borders.focus(theme)
+    }};
     }
 
 `;
 
-export const Textarea = styled.textarea`
+export const Textarea = styled(motion.textarea)`
     padding: ${({ theme }) => theme.spacing.padding.inputs};
     font-weight: 600;
     line-height: 1.15;
     border-radius: ${({ theme }) => theme.borders.radius.lg};
     background-color: ${({ theme }) => theme.colors.inputs};
     color: ${({ theme }) => theme.colors.textSecondary};
-    border: ${({ theme, $error, $valid}) => {
+    border: ${({ theme, $error, $valid }) => {
         if ($error) return `2px solid ${theme.colors.error}`;
         if ($valid) return `2px solid ${theme.colors.valid}`;
         return `2px solid ${theme.colors.accentHover}`
@@ -74,11 +75,11 @@ export const Textarea = styled.textarea`
     resize: none;
 
     &:focus {
-        outline: ${({ theme, $error, $valid}) => {
-            if ($error) return theme.borders.error(theme);
-            if ($valid) return theme.borders.valid(theme);
-            return theme.borders.focus(theme)
-        }};
+        outline: ${({ theme, $error, $valid }) => {
+        if ($error) return theme.borders.error(theme);
+        if ($valid) return theme.borders.valid(theme);
+        return theme.borders.focus(theme)
+    }};
     }
 `;
 
@@ -94,7 +95,7 @@ export const ErrorMessage = styled.small`
     transition: ${({ theme }) => theme.transition.opacity};
 `;
 
-export const SubmitButton = styled.button`
+export const SubmitButton = styled(motion.button)`
     position: relative;
     overflow: hidden;
     z-index: 0;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const ImagesContainer = styled.div`
   display: grid;
@@ -12,7 +13,7 @@ export const ImagesContainer = styled.div`
   }
 `;
 
-export const SkillsItem = styled.div`
+export const SkillsItem = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,7 +32,7 @@ export const Image = styled.img`
  height: 30px;
 `;
 
-export const SkillsDescription = styled.p`
+export const SkillsDescription = styled(motion.p)`
   line-height: 1.4;
   max-width: 60ch;
   margin: ${({ theme }) => theme.spacing.margin.center};

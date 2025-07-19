@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from 'framer-motion';
 
-export const TextContainer = styled.div`
+export const TextContainer = styled(motion.div)`
     @media (min-width: 1024px) {
         order: 1;
         display: flex;
@@ -73,6 +74,10 @@ export const SectionLink = styled.a`
             opacity: 1;
         }
     }
+`;
+
+export const ImageWrapper = styled(motion.div)`
+    display: block;
 `;
 
 export const ImageContainer = styled.div`

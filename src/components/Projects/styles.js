@@ -1,13 +1,14 @@
 import styled from "styled-components";
+import { motion } from 'framer-motion';
 import LinkIcon from '../../assets/icons/link.svg?react';
 
-export const ProjectsContainer = styled.div`
+export const ProjectsContainer = styled(motion.div)`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 `;
 
-export const MediaWrapper = styled.div`
+export const MediaWrapper = styled(motion.div)`
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -51,7 +52,7 @@ export const ProjectVideo = styled.video`
     pointer-events: none;
 `;
 
-export const ProjectCard = styled.div`
+export const ProjectCard = styled(motion.div)`
     position: relative;
     display: flex;
     flex-direction: column;
@@ -83,7 +84,7 @@ export const ProjectCard = styled.div`
 `;
 
 
-export const ProjectContent = styled.div`
+export const ProjectContent = styled(motion.div)`
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -98,13 +99,13 @@ export const ProjectContent = styled.div`
     }
 `;
 
-export const ProjectTitle = styled.h3`
+export const ProjectTitle = styled(motion.h3)`
     font-size: ${({ theme }) => theme.font.sizes.lg};
     margin: 0;
     color: ${({ theme }) => theme.colors.accent};
 `;
 
-export const ProjectDescription = styled.p`
+export const ProjectDescription = styled(motion.p)`
     font-size: ${({ theme }) => theme.font.sizes.sm};
     color: ${({ theme }) => theme.colors.textSecondary};
 
@@ -113,7 +114,7 @@ export const ProjectDescription = styled.p`
     }
 `;
 
-export const ProjectTech = styled.div`
+export const ProjectTech = styled(motion.div)`
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -152,7 +153,7 @@ export const TechImage = styled.img`
     }
 `;
 
-export const ProjectLink = styled.a`
+export const ProjectLink = styled(motion.a)`
     text-decoration: none;
     color: ${({ theme }) => theme.colors.accent};
     font-size: ${({ theme }) => theme.font.sizes.base};

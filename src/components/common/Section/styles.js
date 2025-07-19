@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from 'framer-motion';
 
 export const Section = styled.section`
     background: ${({ theme, $bg = "secondary", $isDark }) => 
@@ -17,7 +18,7 @@ export const Section = styled.section`
     }
 `;
 
-export const SectionContainer = styled.div`
+export const SectionContainer = styled(motion.div)`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,7 +30,7 @@ export const SectionContainer = styled.div`
     }
 `;
 
-export const TextContainer = styled.div`
+export const TextContainer = styled(motion.div)`
 
 `;
 

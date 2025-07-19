@@ -1,30 +1,27 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { containerVariants, itemVariants } from '../common/Animations/animationsVariants';
 import AboutText from './AboutText';
 import AboutImage from './AboutImage';
 import { Section, SectionContainer } from '../common/Section/styles';
-import { TextContainer } from './styles';
-import { containerVariants, itemVariants } from '../common/Animations/animationsVariants';
+import { TextContainer, ImageWrapper } from './styles';
 
 const About = ({ isDark }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-200px' });
+  const { ref, isInView } = useScrollReveal();
 
   return (
     <Section $isDark={isDark} $align="left" id="about">
       <SectionContainer
-        as={motion.div}
         ref={ref}
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
       >
-        <TextContainer as={motion.div} variants={itemVariants}>
+        <TextContainer variants={itemVariants}>
           <AboutText />
         </TextContainer>
-        <motion.div variants={itemVariants}>
+        <ImageWrapper variants={itemVariants}>
           <AboutImage />
-        </motion.div>
+        </ImageWrapper>
       </SectionContainer>
     </Section>
   );

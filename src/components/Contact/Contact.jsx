@@ -20,7 +20,7 @@ const Contact = () => {
     } = useContactForm();
 
     return (
-        <Section id="contact">
+        <Section id="contact" $bg="transparent">
             <SectionContainer $direction="column">
                 <TextContainer>
                     <SectionHeader

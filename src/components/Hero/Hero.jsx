@@ -20,9 +20,9 @@ const Hero = () => {
         <Section>
             <SectionContainer>
                 <ImageContainer $clicked={clicked}
-                onClick={isMobile ? () => setClicked(!clicked) : undefined}
-                onMouseEnter={!isMobile ? () => setClicked(!clicked) : undefined}
-                onMouseLeave={!isMobile ? () => setClicked(!clicked) : undefined}>
+                    onClick={isMobile ? () => setClicked(!clicked) : undefined}
+                    onMouseEnter={!isMobile ? () => setClicked(!clicked) : undefined}
+                    onMouseLeave={!isMobile ? () => setClicked(!clicked) : undefined}>
                     <Image src={heroImage}
                         alt="Developer writing code" loading="lazy"/>
                 </ImageContainer>

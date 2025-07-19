@@ -25,7 +25,7 @@ const Header = ({ toggleTheme, isDark }) => {
 
     return (
         <HeaderWrapper $isScrolled={isScrolled}>
-            <Nav role="navigation" aria-label="Main navigation" as={motion.nav}
+            <Nav role="navigation" aria-label="Main navigation"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible">

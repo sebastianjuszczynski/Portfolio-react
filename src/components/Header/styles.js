@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { motion } from "motion/react";
 
 export const HeaderWrapper = styled.header`
@@ -13,7 +13,7 @@ export const HeaderWrapper = styled.header`
   z-index: 2;
 `;
 
-export const Nav = styled.nav`
+export const Nav = styled(motion.nav)`
 display: flex;
 align-items: center;
 justify-content: center;

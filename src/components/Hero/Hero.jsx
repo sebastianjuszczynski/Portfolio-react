@@ -18,7 +18,7 @@ const Hero = () => {
     const { t } = useLanguage();
 
     return (
-        <Section>
+        <Section id="home">
             <SectionContainer
                 variants={heroContainerVariants}
                 initial="hidden"

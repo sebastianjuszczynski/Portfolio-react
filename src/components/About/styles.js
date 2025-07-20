@@ -41,9 +41,11 @@ export const SectionLink = styled.a`
     padding: ${({ theme }) => theme.spacing.padding.button};
     border-radius: ${({ theme }) => theme.borders.radius.full};
     cursor: pointer;
-    font-size: ${({ theme }) => theme.font.sizes.base};
+    font-size: ${({ theme }) => theme.font.sizes.sm};
     max-width: 70%;
     margin: ${({ theme }) => theme.spacing.margin.lg};
+    text-transform: uppercase;
+    letter-spacing: 1px;
 
     @media (min-width: 768px) {
         font-size: ${({ theme }) => theme.font.sizes.lg};
@@ -56,7 +58,6 @@ export const SectionLink = styled.a`
         z-index: 0;
         text-align: left;
         font-size: ${({ theme }) => theme.font.sizes.sm};
-        letter-spacing: 1px;
         width: 300px;
         margin: 0;
 

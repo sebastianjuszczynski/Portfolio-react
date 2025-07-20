@@ -30,9 +30,9 @@ const Header = ({ toggleTheme, isDark }) => {
                 initial="hidden"
                 animate="visible"
                 >
-                <Logo href="#hero" variants={headerItemVariants}>Seb.dev</Logo>
+                <Logo href="#home" variants={headerItemVariants}>Seb.dev</Logo>
                 <Menu id="main-menu" $isOpen={isOpen} >
-                    <MenuItem variants={headerItemVariants}><MenuLink href="#hero">{t("home")}</MenuLink></MenuItem>
+                    <MenuItem variants={headerItemVariants}><MenuLink href="#home">{t("home")}</MenuLink></MenuItem>
                     <MenuItem variants={headerItemVariants}><MenuLink href="#about">{t("about")}</MenuLink></MenuItem>
                     <MenuItem variants={headerItemVariants}><MenuLink href="#skills">{t("skills")}</MenuLink></MenuItem>
                     <MenuItem variants={headerItemVariants}><MenuLink href="#projects">{t("projects")}</MenuLink></MenuItem>

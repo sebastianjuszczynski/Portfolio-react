@@ -11,22 +11,22 @@ const FooterComponent = () => {
         <Footer>
             <FooterContainer>
                 <FooterNavContainer>
-                    <FooterHeader>Seb.dev</FooterHeader>
+                    <FooterHeader href="#home">Seb.dev</FooterHeader>
                     <FooterNav>
                         <FooterNavItem>
-                            <FooterNavLink>{t("home")}</FooterNavLink>
+                            <FooterNavLink href="#home">{t("home")}</FooterNavLink>
                         </FooterNavItem>
                         <FooterNavItem>
-                            <FooterNavLink>{t("about")}</FooterNavLink>
+                            <FooterNavLink href="#about">{t("about")}</FooterNavLink>
                         </FooterNavItem>
                         <FooterNavItem>
-                            <FooterNavLink>{t("skills")}</FooterNavLink>
+                            <FooterNavLink href="#skills">{t("skills")}</FooterNavLink>
                         </FooterNavItem>
                         <FooterNavItem>
-                            <FooterNavLink>{t("projects")}</FooterNavLink>
+                            <FooterNavLink href="#projects">{t("projects")}</FooterNavLink>
                         </FooterNavItem>
                         <FooterNavItem>
-                            <FooterNavLink>{t("contact")}</FooterNavLink>
+                            <FooterNavLink href="#contact">{t("contact")}</FooterNavLink>
                         </FooterNavItem>
                     </FooterNav>
                     <FooterSocials>

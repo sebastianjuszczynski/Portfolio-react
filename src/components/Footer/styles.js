@@ -40,13 +40,15 @@ export const FooterNavContainer = styled.div`
   }
 `;
 
-export const FooterHeader = styled.h3`
+export const FooterHeader = styled.a`
     font-family: ${({ theme }) => theme.font.logo};
     font-size: ${({ theme }) => theme.font.sizes.xl};
     font-weight: 100;
     letter-spacing: 2px;
+    text-decoration: none;
     text-transform: uppercase;
     color: ${({ theme }) => theme.colors.textWhite};
+    transition: ${({ theme }) => theme.transition.color};
 
     @media (max-width: 360px) {
         font-size: ${({ theme }) => theme.font.sizes.lg};
@@ -55,6 +57,10 @@ export const FooterHeader = styled.h3`
     @media (min-width: 1024px) {
         font-size: ${({ theme }) => theme.font.sizes.lg};
         letter-spacing: 6px;
+    }
+
+    &:hover {
+        color: ${({ theme }) => theme.colors.accentHover};
     }
 `;
 
@@ -131,6 +137,7 @@ export const FooterParagraph = styled.p`
 `;
 
 export const FooterSpan = styled.span`
+    font-family: ${({ theme }) => theme.font.logo};
     text-transform: uppercase;
     letter-spacing: 3px;
 `;

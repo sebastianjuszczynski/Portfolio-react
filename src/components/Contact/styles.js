@@ -107,6 +107,8 @@ export const SubmitButton = styled(motion.button)`
     border-radius: ${({ theme }) => theme.borders.radius.full};
     border: none;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: ${({ theme }) => theme.font.main};
     font-size: ${({ theme }) => theme.font.sizes.base};
 
     &::before {

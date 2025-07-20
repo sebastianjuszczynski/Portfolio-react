@@ -28,11 +28,12 @@ padding: ${({ theme }) => theme.spacing.padding.headerNav};
 
 export const Logo = styled(motion.a)`
   margin-right: auto;
-  font-family: ${({ theme }) => theme.font.main};
+  font-family: ${({ theme }) => theme.font.logo};
   font-size: ${({ theme }) => theme.font.sizes.lg};
   color: ${({ theme }) => theme.colors.accent};
   text-transform: uppercase;
-  text-decoration: none;
+  transition: ${({ theme }) => theme.transition.color};
+
   letter-spacing: 2px;
 
   @media (min-width: 768px) {
@@ -40,7 +41,11 @@ export const Logo = styled(motion.a)`
   }
   @media (min-width: 1024px) {
   font-size: ${({ theme }) => theme.font.sizes.base}; 
-}
+ }
+
+     &:hover {
+        color: ${({ theme }) => theme.colors.accentHover};
+    }
 `;
 
 export const Menu = styled.ul`
@@ -154,7 +159,7 @@ export const LangButton = styled.button`
   border-radius: ${({ theme }) => theme.borders.radius.sm};
   cursor: pointer;
   font-size: ${({ theme }) => theme.font.sizes.base};
-  padding: ${({theme}) => theme.spacing.padding.sm};
+  padding: ${({ theme }) => theme.spacing.padding.sm};
 `;
 
 export const FlagIcon = styled.img`
@@ -181,10 +186,10 @@ export const LangOptions = styled.ul`
 `;
 
 export const LangOption = styled.li`
-  padding: ${({theme}) => theme.spacing.padding.xs};
+  padding: ${({ theme }) => theme.spacing.padding.xs};
   font-size: ${({ theme }) => theme.font.sizes.base};
   cursor: pointer;
-  transition: ${({theme}) => theme.transition.background};
+  transition: ${({ theme }) => theme.transition.background};
   @media (min-width: 1024px) {
     &:hover {
       background: ${({ theme }) => theme.colors.accentHover};

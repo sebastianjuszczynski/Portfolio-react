@@ -1,3 +1,5 @@
+import { FooterParagraph } from "../components/Footer/styles";
+
 const translations = {
   en: {
     home: "Home",
@@ -31,7 +33,8 @@ const translations = {
     errorEmail: "Enter a valid email address",
     errorMessage: "Message must be at least 10 characters",
     formSuccess: "✅ Message sent",
-    formError: "❌ Ooops...Something went wrong..."
+    formError: "❌ Ooops...Something went wrong...",
+    footerParagraph: "All rights reserved by"
   },
   pl: {
     home: "Strona główna",
@@ -65,7 +68,8 @@ const translations = {
     errorEmail: "Wpisz poprawny adres e-mail",
     errorMessage: "Wiadomość musi mieć co najmniej 10 znaków",
     formSuccess: "✅ Wiadomość wysłana",
-    formError: "❌ Ooops...Coś poszło nie tak..."
+    formError: "❌ Ooops...Coś poszło nie tak...",
+    footerParagraph: "Wszelkie prawa zastrzeżone."
   },
 };
 

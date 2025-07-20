@@ -1,21 +1,16 @@
-import { useScrollReveal } from '../../hooks/useScrollReveal';
-import { containerVariants, itemVariants } from '../common/Animations/animationsVariants';
+import { itemVariants } from '../common/Animations/animationsVariants';
+import ScrollRevealSection from "../common/ScrollRevealSection/ScrollRevealSection";
 import AboutText from './AboutText';
 import AboutImage from './AboutImage';
 import { Section, SectionContainer } from '../common/Section/styles';
 import { TextContainer, ImageWrapper } from './styles';
 
 const About = ({ isDark }) => {
-  const { ref, isInView } = useScrollReveal();
 
   return (
     <Section $isDark={isDark} $align="left" id="about">
-      <SectionContainer
-        ref={ref}
-        variants={containerVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-      >
+      <ScrollRevealSection>
+      <SectionContainer>
         <TextContainer variants={itemVariants}>
           <AboutText />
         </TextContainer>
@@ -23,6 +18,7 @@ const About = ({ isDark }) => {
           <AboutImage />
         </ImageWrapper>
       </SectionContainer>
+      </ScrollRevealSection>
     </Section>
   );
 };

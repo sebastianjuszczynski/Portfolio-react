@@ -1,3 +1,4 @@
+import { useLanguage } from '../../i18n/LanguageContext';
 import SocialsIcons from '../common/SocialsIcons/SocialsIcons';
 import {
     Footer, FooterContainer, FooterNavContainer, FooterHeader,
@@ -5,6 +6,7 @@ import {
 } from './styles';
 
 const FooterComponent = () => {
+    const { t } = useLanguage();
     return (
         <Footer>
             <FooterContainer>
@@ -12,19 +14,19 @@ const FooterComponent = () => {
                     <FooterHeader>Seb.dev</FooterHeader>
                     <FooterNav>
                         <FooterNavItem>
-                            <FooterNavLink>Home</FooterNavLink>
+                            <FooterNavLink>{t("home")}</FooterNavLink>
                         </FooterNavItem>
                         <FooterNavItem>
-                            <FooterNavLink>About</FooterNavLink>
+                            <FooterNavLink>{t("about")}</FooterNavLink>
                         </FooterNavItem>
                         <FooterNavItem>
-                            <FooterNavLink>Skills</FooterNavLink>
+                            <FooterNavLink>{t("skills")}</FooterNavLink>
                         </FooterNavItem>
                         <FooterNavItem>
-                            <FooterNavLink>Projects</FooterNavLink>
+                            <FooterNavLink>{t("projects")}</FooterNavLink>
                         </FooterNavItem>
                         <FooterNavItem>
-                            <FooterNavLink>Contact</FooterNavLink>
+                            <FooterNavLink>{t("contact")}</FooterNavLink>
                         </FooterNavItem>
                     </FooterNav>
                     <FooterSocials>
@@ -33,7 +35,7 @@ const FooterComponent = () => {
                 </FooterNavContainer>
 
             </FooterContainer>
-            <FooterParagraph>&copy;All rights reserved by
+            <FooterParagraph>&copy;{t("footerParagraph")}
                 <FooterSpan> Seb.dev</FooterSpan>
             </FooterParagraph>
         </Footer>

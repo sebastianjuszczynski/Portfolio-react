@@ -8,6 +8,8 @@ import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
 import FooterComponent from './components/Footer/FooterComponent';
+import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
+
 
 const App = ({ toggleTheme, isDark }) => {
   const [showIntro, setShowIntro] = useState(true);
@@ -37,6 +39,7 @@ const App = ({ toggleTheme, isDark }) => {
           <Projects />
           <Contact />
           <FooterComponent />
+           <ScrollToTopButton />
         </>
       )}
     </LanguageProvider>

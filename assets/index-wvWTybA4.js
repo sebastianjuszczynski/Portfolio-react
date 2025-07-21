@@ -1286,7 +1286,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         width: 100%;
         height: 160px;
     }
-`,Wz=()=>{const{t}=da();return j.jsxs(j.Fragment,{children:[j.jsx(Hc,{sub:t("aboutSubheader"),span:t("aboutSpan"),title:t("aboutTitle")}),j.jsx(Xz,{children:t("aboutDescription")}),j.jsx(Kz,{href:"#contact",children:t("aboutLink")})]})},Jz="/Portfolio-react/assets/code-thinking-CAfDxzOJ.svg",t9=()=>j.jsx(j.Fragment,{children:j.jsx(Qz,{children:j.jsx(Iz,{src:Jz,alt:"Developer thinking about code",loading:"lazy"})})}),Yc=I.section`
+`,Wz=()=>{const{t}=da();return j.jsxs(j.Fragment,{children:[j.jsx(Hc,{sub:t("aboutSubheader"),span:t("aboutSpan"),title:t("aboutTitle")}),j.jsx(Xz,{children:t("aboutDescription")}),j.jsx(Kz,{href:"#contact",children:t("aboutLink")})]})},Jz="/Portfolio-react/assets/code-thinking-CAfDxzOJ.svg",t9=()=>j.jsx(j.Fragment,{children:j.jsx(Qz,{"data-testid":"image-wrapper",children:j.jsx(Iz,{src:Jz,alt:"Developer thinking about code",loading:"lazy"})})}),Yc=I.section`
     background: ${({theme:t,$bg:n="secondary",$isDark:a})=>a||n==="transparent"?t.colors.transparent:t.backgrounds.secondary};
     margin: ${({theme:t})=>t.spacing.margin.lg};
     padding: ${({theme:t})=>t.spacing.padding.xl};

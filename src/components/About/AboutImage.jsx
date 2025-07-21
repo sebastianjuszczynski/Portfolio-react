@@ -3,7 +3,7 @@ import { ImageContainer, Image } from './styles';
 
 const AboutImage = () => (
     <>
-        <ImageContainer>
+        <ImageContainer data-testid="image-wrapper">
             <Image src={aboutImage} alt="Developer thinking about code" loading="lazy" />
         </ImageContainer>
     </>

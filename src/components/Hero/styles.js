@@ -48,6 +48,7 @@ export const ImageContainer = styled(motion.div)`
 
     @media (min-width: 768px) {
          width: 70%;
+         margin: 0 auto;
     }
 
     @media (min-width: 1024px) {

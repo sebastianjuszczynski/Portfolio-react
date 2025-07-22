@@ -69,7 +69,7 @@ const translations = {
     errorMessage: "Wiadomość musi mieć co najmniej 10 znaków",
     formSuccess: "✅ Wiadomość wysłana",
     formError: "❌ Ooops...Coś poszło nie tak...",
-    footerParagraph: "Wszelkie prawa zastrzeżone."
+    footerParagraph: "Prawa zastrzeżone by"
   },
 };
 

@@ -33,7 +33,6 @@ const FooterComponent = () => {
                         <SocialsIcons isFooter />
                     </FooterSocials>
                 </FooterNavContainer>
-
             </FooterContainer>
             <FooterParagraph>&copy;{t("footerParagraph")}
                 <FooterSpan> Seb.dev</FooterSpan>

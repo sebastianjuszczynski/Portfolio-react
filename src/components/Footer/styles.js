@@ -66,13 +66,14 @@ export const FooterHeader = styled.a`
 
 export const FooterNav = styled.ul`
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: ${({ theme }) => theme.font.sizes.base};
     list-style: none;
     cursor: pointer;
     padding: ${({ theme }) => theme.spacing.padding.base};
-    gap: ${({ theme }) => theme.spacing.gap.sm};
+    gap: ${({ theme }) => theme.spacing.gap.base};
     margin: ${({ theme }) => theme.spacing.margin.base};
 
     @media (max-width: 360px) {
@@ -86,6 +87,7 @@ export const FooterNav = styled.ul`
     @media (min-width: 1024px) {
         font-size: ${({ theme }) => theme.font.sizes.base};
         gap: ${({ theme }) => theme.spacing.gap.lg};
+        flex-direction: row;
     }
 `;
 

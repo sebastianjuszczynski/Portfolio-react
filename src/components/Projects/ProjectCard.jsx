@@ -7,7 +7,7 @@ import {
     ProjectCard as Card, ProjectImage,
     ProjectVideo, MediaWrapper, ProjectContent,
     ProjectTitle, ProjectDescription, ProjectTech,
-    TechImage, ProjectLink, LinkImage, LinkSpan
+    TechImage, ProjectLink, LinkImage, LinkSpan, LayoutCenter
 } from './styles.js';
 
 
@@ -32,6 +32,7 @@ const ProjectCard = ({ title, description, image, video, tech, link }) => {
                     }
                 }}
             >
+                <LayoutCenter>
                 <MediaWrapper variants={itemVariants}>
                     <ProjectImage src={image}
                         alt={title} loading="lazy" />
@@ -57,6 +58,7 @@ const ProjectCard = ({ title, description, image, video, tech, link }) => {
                         <LinkSpan>{t("projectsLink")}</LinkSpan>
                     </ProjectLink>
                 </ProjectContent>
+                </LayoutCenter>
             </Card>
         </ScrollRevealSection>
     );

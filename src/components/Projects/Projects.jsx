@@ -1,20 +1,19 @@
-import ScrollRevealSection from "../common/ScrollRevealSection/ScrollRevealSection";
+
 import { itemVariants } from '../common/Animations/animationsVariants';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
 import SectionHeader from '../common/SectionHeader/SectionHeader.jsx';
 import { dataProjects } from './dataProjects.js';
-import { Section, SectionContainer, TextContainer } from '../common/Section/styles.js';
+import { TextContainer } from '../common/Section/styles.js';
 import { ProjectsContainer } from './styles.js'
 import ProjectCard from './ProjectCard.jsx';
+import Section from "../common/Section/Section.jsx";
 
 
 const Projects = () => {
     const { t } = useLanguage();
 
     return (
-        <Section id="projects">
-            <ScrollRevealSection>
-                <SectionContainer $direction="column">
+        <Section id="projects" $direction="column">
                     <TextContainer variants={itemVariants}>
                         <SectionHeader
                             sub={t("projectsSubheader")}
@@ -27,8 +26,6 @@ const Projects = () => {
                             <ProjectCard key={project.title} {...project} />
                         ))}
                     </ProjectsContainer>
-                </SectionContainer>
-            </ScrollRevealSection>
         </Section>
     );
 };

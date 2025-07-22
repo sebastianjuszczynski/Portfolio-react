@@ -1,16 +1,6 @@
 import styled from "styled-components";
 import { motion } from 'framer-motion';
 
-export const TextContainer = styled(motion.div)`
-    @media (min-width: 1024px) {
-        order: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-    }
-`;
-
 export const SectionDescription = styled.p`
     color: ${({ theme }) => theme.colors.textSecondary};
     line-height: 1.4;

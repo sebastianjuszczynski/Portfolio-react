@@ -1,24 +1,20 @@
 import { itemVariants } from '../common/Animations/animationsVariants';
-import ScrollRevealSection from "../common/ScrollRevealSection/ScrollRevealSection";
+import Section from '../common/Section/Section';
 import AboutText from './AboutText';
 import AboutImage from './AboutImage';
-import { Section, SectionContainer } from '../common/Section/styles';
-import { TextContainer, ImageWrapper } from './styles';
+import { TextContainer } from '../common/Section/styles';
+import { ImageWrapper } from './styles';
 
 const About = ({ isDark }) => {
 
   return (
     <Section $isDark={isDark} $align="left" id="about">
-      <ScrollRevealSection>
-      <SectionContainer>
-        <TextContainer variants={itemVariants}>
-          <AboutText />
-        </TextContainer>
-        <ImageWrapper variants={itemVariants}>
-          <AboutImage />
-        </ImageWrapper>
-      </SectionContainer>
-      </ScrollRevealSection>
+      <TextContainer variants={itemVariants} $order="1" $alignItems="flex-start">
+        <AboutText />
+      </TextContainer>
+      <ImageWrapper variants={itemVariants}>
+        <AboutImage />
+      </ImageWrapper>
     </Section>
   );
 };

@@ -16,7 +16,6 @@ export const MediaWrapper = styled(motion.div)`
     overflow: hidden;
 
     @media (min-width: 768px) {
-        width: 70%;
         margin: ${({ theme }) => theme.spacing.margin.center};
     }
 
@@ -52,6 +51,14 @@ export const ProjectVideo = styled.video`
     pointer-events: none;
 `;
 
+export const LayoutCenter = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: ${({ theme }) => theme.spacing.gap.xl};
+`;
+
 export const ProjectCard = styled(motion.div)`
     position: relative;
     display: flex;
@@ -61,12 +68,12 @@ export const ProjectCard = styled(motion.div)`
     gap: ${({ theme }) => theme.spacing.gap.lg};
     border-radius: ${({ theme }) => theme.borders.radius.base};
     background: ${({ theme }) => theme.backgrounds.main};
-    padding: ${({ theme }) => theme.spacing.padding.xxl};
+    padding: ${({ theme }) => theme.spacing.padding.xl};
     margin-bottom: ${({ theme }) => theme.spacing.margin.bottomLg};
 
     @media (min-width: 768px) {
-        align-items: center;
-        width: 70%;
+        width: 350px;
+        margin: 0 auto;
     }
 
     @media (min-width: 1024px) {
@@ -89,14 +96,6 @@ export const ProjectContent = styled(motion.div)`
     flex-direction: column;
     text-align: left;
     gap: ${({ theme }) => theme.spacing.gap.sm};
-
-    @media (min-width: 768px) {
-        text-align: center;
-    }
-
-    @media (min-width: 1024px) {
-        text-align: left;
-    }
 `;
 
 export const ProjectTitle = styled(motion.h3)`
@@ -124,10 +123,6 @@ export const ProjectTech = styled(motion.div)`
     border-radius: ${({ theme }) => theme.borders.radius.full};
     margin: 1rem 0;
     width: fit-content;
-
-    @media (min-width: 768px) {
-        margin: ${({ theme }) => theme.spacing.margin.base};
-    }
 
     @media (min-width: 1024px) {
         margin: 1rem 0;

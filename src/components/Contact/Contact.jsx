@@ -1,9 +1,9 @@
-import ScrollRevealSection from "../common/ScrollRevealSection/ScrollRevealSection";
 import { useContactForm } from "./useContactForm.js";
 import { itemVariants } from '../common/Animations/animationsVariants';
 import { formFields } from "./formFields";
 import SectionHeader from "../common/SectionHeader/SectionHeader.jsx";
-import { Section, SectionContainer, TextContainer } from '../common/Section/styles.js';
+import Section from "../common/Section/Section.jsx";
+import { TextContainer } from '../common/Section/styles.js';
 import {
     Form, InputsWrapper, InputWrapper, TextareaWrapper, LabelHidden, Input,
     Textarea, ErrorMessage, SubmitButton, FormStatus
@@ -22,9 +22,7 @@ const Contact = () => {
     } = useContactForm();
 
     return (
-        <Section id="contact" $bg="transparent">
-            <ScrollRevealSection>
-                <SectionContainer $direction="column">
+        <Section id="contact" $bg="transparent" $direction="column">
                     <TextContainer variants={itemVariants}>
                         <SectionHeader
                             sub={t("contactSubheader")}
@@ -82,8 +80,6 @@ const Contact = () => {
                         <SubmitButton variants={itemVariants} type="submit">{t("submitButton")}</SubmitButton>
                         <FormStatus $show={!!statusMessage} aria-live="polite">{statusMessage}</FormStatus>
                     </Form>
-                </SectionContainer>
-            </ScrollRevealSection>
         </Section>
     );
 };

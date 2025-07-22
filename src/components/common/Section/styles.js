@@ -31,7 +31,13 @@ export const SectionContainer = styled(motion.div)`
 `;
 
 export const TextContainer = styled(motion.div)`
-
+    @media (min-width: 1024px) {
+        order: ${({ $order }) => $order || "0"};
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: ${({ $alignItems}) => $alignItems || "center"};
+    }
 `;
 
 

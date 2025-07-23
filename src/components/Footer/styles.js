@@ -119,10 +119,6 @@ export const FooterSocials = styled.ul`
     @media (max-width: 360px) {
         margin: ${({ theme }) => theme.spacing.margin.lg};
     }
-
-    @media (min-width: 1024px) {
-        margin: 0;
-    }
 `;
 
 export const FooterParagraph = styled.p`

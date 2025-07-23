@@ -73,7 +73,7 @@ export const ProjectCard = styled(motion.div)`
 
     @media (min-width: 768px) {
         width: 350px;
-        margin: 0 auto;
+        margin: ${({ theme }) => theme.spacing.margin.center};;
     }
 
     @media (min-width: 1024px) {
@@ -100,7 +100,6 @@ export const ProjectContent = styled(motion.div)`
 
 export const ProjectTitle = styled(motion.h3)`
     font-size: ${({ theme }) => theme.font.sizes.lg};
-    margin: 0;
     color: ${({ theme }) => theme.colors.accent};
 `;
 
@@ -123,10 +122,6 @@ export const ProjectTech = styled(motion.div)`
     border-radius: ${({ theme }) => theme.borders.radius.full};
     margin: 1rem 0;
     width: fit-content;
-
-    @media (min-width: 1024px) {
-        margin: 1rem 0;
-    }
 `;
 
 export const TechImage = styled.img`

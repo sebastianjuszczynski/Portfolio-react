@@ -152,10 +152,6 @@ Error generating stack: `+s.message+`
     @media (max-width: 360px) {
         margin: ${({theme:t})=>t.spacing.margin.lg};
     }
-
-    @media (min-width: 1024px) {
-        margin: 0;
-    }
 `,ME=I.p`
     font-size: ${({theme:t})=>t.font.sizes.sm};
     color: ${({theme:t})=>t.colors.textWhite};
@@ -1193,7 +1189,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
 `,$z=(t={once:!0,margin:"-200px"})=>{const n=Z.useRef(null),a=kD(n,t);return{ref:n,isInView:a}},Yz=I(Et.div)`
     display: block;
-`,VT=({children:t})=>{const{ref:n,isInView:a}=$z();return j.jsx(Yz,{ref:n,variants:XD,initial:"hidden",animate:a?"visible":"hidden",children:t})},Hc=({children:t,$direction:n,...a})=>j.jsx(Bz,{...a,children:j.jsx(VT,{children:j.jsx(Hz,{$direction:n,children:t})})}),qz=I.h3`
+`,VT=({children:t})=>{const{ref:n,isInView:a}=$z();return j.jsx(Yz,{ref:n,variants:XD,initial:"hidden",animate:a?"visible":"hidden","data-testid":"scroll-reveal",children:t})},Hc=({children:t,$direction:n,...a})=>j.jsx(Bz,{...a,children:j.jsx(VT,{children:j.jsx(Hz,{$direction:n,children:t})})}),qz=I.h3`
     font-size: ${({theme:t})=>t.font.sizes.sm};
     margin-bottom: 0;
     font-weight: 900;
@@ -1405,7 +1401,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
     @media (min-width: 768px) {
         width: 350px;
-        margin: 0 auto;
+        margin: ${({theme:t})=>t.spacing.margin.center};;
     }
 
     @media (min-width: 1024px) {
@@ -1427,7 +1423,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     gap: ${({theme:t})=>t.spacing.gap.sm};
 `,y9=I(Et.h3)`
     font-size: ${({theme:t})=>t.font.sizes.lg};
-    margin: 0;
     color: ${({theme:t})=>t.colors.accent};
 `,v9=I(Et.p)`
     font-size: ${({theme:t})=>t.font.sizes.sm};
@@ -1446,10 +1441,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     border-radius: ${({theme:t})=>t.borders.radius.full};
     margin: 1rem 0;
     width: fit-content;
-
-    @media (min-width: 1024px) {
-        margin: 1rem 0;
-    }
 `,x9=I.img`
     width: 20px;
     height: 20px;

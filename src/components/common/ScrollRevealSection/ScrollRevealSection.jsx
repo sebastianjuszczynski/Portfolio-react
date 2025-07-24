@@ -11,6 +11,7 @@ const ScrollRevealSection = ({ children }) => {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
+            data-testid="scroll-reveal"
         >
         {children}
         </MotionTag>

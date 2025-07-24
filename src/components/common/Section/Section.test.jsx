@@ -1,5 +1,4 @@
 import { render } from '@testing-library/react';
-import 'jest-styled-components';
 import Section from './Section';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from '../../../styles/theme';

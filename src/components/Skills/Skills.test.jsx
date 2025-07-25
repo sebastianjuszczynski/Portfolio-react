@@ -1,20 +1,10 @@
 import { render, screen, act } from '@testing-library/react';
 import Skills from './Skills';
 import { ThemeProvider } from 'styled-components';
-import { LanguageProvider, useLanguage } from '../../i18n/LanguageContext';
+import LanguageSwitcher from '../../__tests__/testsUtils/withLanguageSwitcher';
+import { LanguageProvider } from '../../i18n/LanguageContext';
 import { lightTheme } from '../../styles/theme';
 import { skillsData } from './skillsData';
-import { beforeEach } from 'vitest';
-
-const LanguageSwitcher = ({ children }) => {
-    const { setLang } = useLanguage();
-
-    if (typeof window !== 'undefined') {
-        window.setTestLang = setLang;
-    }
-
-    return children;
-};
 
 describe('Skills component', () => {
     beforeEach(() => {

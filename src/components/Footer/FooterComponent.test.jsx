@@ -3,12 +3,8 @@ import FooterComponent from './FooterComponent';
 import { lightTheme } from '../../styles/theme';
 import { socials } from '../common/SocialsIcons/SocialsIconsData';
 import rendersWithProviders from'../../__tests__/testsUtils/rendersWithProviders';
+import { expectLinks, linksEN, linksPL } from '../../__tests__/testsUtils/expectLinks';
 
-const expectFooterLinks = (labels) => {
-  labels.forEach(label => {
-    expect(screen.getByRole('link', { name: label })).toBeInTheDocument();
-  });
-};
 
 describe('Footer component', () => {
     beforeEach(() => {
@@ -26,7 +22,7 @@ describe('Footer component', () => {
     });
 
     test('renders all FooterNavLinks', () => {
-        expectFooterLinks(['Home', 'About', 'Skills', 'Projects', 'Contact']);
+        expectLinks(linksEN);
     });
 
     test('renders text in paragraph', () => {
@@ -36,12 +32,12 @@ describe('Footer component', () => {
         act(() => {
             window.setTestLang('pl');
         });
-         expectFooterLinks(['Strona główna', 'O mnie', 'Umiejętności', 'Projekty', 'Kontakt']);
+         expectLinks(linksPL);
         expect(screen.getByText(/Prawa zastrzeżone by/i)).toBeInTheDocument();
     });
     test('renders social media links and svgs in footer with correct attributes and styles', () => {
         const socialsContainer = screen.getByTestId('footer-socials');
-        const { getByRole, getAllByRole } = within(socialsContainer);
+        const { getByRole } = within(socialsContainer);
         
         const svgIcons = socialsContainer.querySelectorAll('svg');
         expect(svgIcons).toHaveLength(socials.length);

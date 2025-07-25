@@ -64,7 +64,7 @@ const Header = ({ toggleTheme, isDark }) => {
                             )}
                         </AnimatePresence>
                     </ThemeToggleButton>
-                    <LangDropdown aria-label="Change language" onClick={handleLangOpen} ref={langRef} variants={headerItemVariants}>
+                    <LangDropdown role="button" aria-label="Change language" onClick={handleLangOpen} ref={langRef} variants={headerItemVariants}>
                         <LangButton type="button" aria-haspopup="listbox"
                             aria-expanded="false">
                             <FlagIcon src={lang === "en" ? gbIcon : plIcon} alt={lang === "en" ? "English" : "Polski"} />
@@ -80,7 +80,7 @@ const Header = ({ toggleTheme, isDark }) => {
                         </LangOptions>
                     </LangDropdown>
                     <MobileHamburger ref={menuRef} variants={headerItemVariants}>
-                        <Hamburger rounded toggled={isOpen} toggle={handleIsOpen} aria-expanded={handleIsOpen} />
+                        <Hamburger rounded toggled={isOpen} toggle={handleIsOpen} aria-expanded={handleIsOpen} data-testid="hamburger" />
                     </MobileHamburger>
                 </Controls>
             </Nav>

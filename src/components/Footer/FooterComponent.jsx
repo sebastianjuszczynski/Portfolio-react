@@ -8,7 +8,7 @@ import {
 const FooterComponent = () => {
     const { t } = useLanguage();
     return (
-        <Footer>
+        <Footer id='footer'>
             <FooterContainer>
                 <FooterNavContainer>
                     <FooterHeader href="#home">Seb.dev</FooterHeader>
@@ -29,7 +29,7 @@ const FooterComponent = () => {
                             <FooterNavLink href="#contact">{t("contact")}</FooterNavLink>
                         </FooterNavItem>
                     </FooterNav>
-                    <FooterSocials>
+                    <FooterSocials data-testid="footer-socials">
                         <SocialsIcons isFooter />
                     </FooterSocials>
                 </FooterNavContainer>

@@ -1,10 +1,8 @@
-import { render, screen, act, within } from '@testing-library/react';
+import { screen, act, within } from '@testing-library/react';
 import FooterComponent from './FooterComponent';
-import { ThemeProvider } from 'styled-components';
-import LanguageSwitcher from '../../__tests__/testsUtils/withLanguageSwitcher';
-import { LanguageProvider } from '../../i18n/LanguageContext';
 import { lightTheme } from '../../styles/theme';
 import { socials } from '../common/SocialsIcons/SocialsIconsData';
+import rendersWithProviders from'../../__tests__/testsUtils/rendersWithProviders';
 
 const expectFooterLinks = (labels) => {
   labels.forEach(label => {
@@ -14,15 +12,7 @@ const expectFooterLinks = (labels) => {
 
 describe('Footer component', () => {
     beforeEach(() => {
-        render(
-            <ThemeProvider theme={lightTheme}>
-                <LanguageProvider>
-                    <LanguageSwitcher>
-                        <FooterComponent />
-                    </LanguageSwitcher>
-                </LanguageProvider>
-            </ThemeProvider>
-        );
+        rendersWithProviders(<FooterComponent />)
     });
 
     test('FooterComponent renders correctly', () => {

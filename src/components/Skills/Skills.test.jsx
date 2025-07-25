@@ -1,22 +1,11 @@
-import { render, screen, act } from '@testing-library/react';
+import { screen, act } from '@testing-library/react';
 import Skills from './Skills';
-import { ThemeProvider } from 'styled-components';
-import LanguageSwitcher from '../../__tests__/testsUtils/withLanguageSwitcher';
-import { LanguageProvider } from '../../i18n/LanguageContext';
-import { lightTheme } from '../../styles/theme';
 import { skillsData } from './skillsData';
+import rendersWithProviders from'../../__tests__/testsUtils/rendersWithProviders';
 
 describe('Skills component', () => {
     beforeEach(() => {
-        render(
-            <ThemeProvider theme={lightTheme}>
-                <LanguageProvider>
-                    <LanguageSwitcher>
-                        <Skills />
-                    </LanguageSwitcher>
-                </LanguageProvider>
-            </ThemeProvider>
-        );
+        rendersWithProviders(<Skills />)
     });
 
     test('Skills renders correctly', () => {

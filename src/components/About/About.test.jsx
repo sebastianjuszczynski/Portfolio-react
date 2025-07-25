@@ -1,21 +1,10 @@
-import { render, screen, act } from '@testing-library/react';
+import { screen, act } from '@testing-library/react';
 import About from './About';
-import { ThemeProvider } from 'styled-components';
-import LanguageSwitcher from '../../__tests__/testsUtils/withLanguageSwitcher';
-import { LanguageProvider } from '../../i18n/LanguageContext';
-import { lightTheme } from '../../styles/theme';
+import rendersWithProviders from'../../__tests__/testsUtils/rendersWithProviders';
 
 describe('About component', () => {
     test('About renders correctly and reacts to language change', () => {
-        const { container } = render(
-            <ThemeProvider theme={lightTheme}>
-                <LanguageProvider>
-                    <LanguageSwitcher>
-                        <About isDark={false} />
-                    </LanguageSwitcher>
-                </LanguageProvider>
-            </ThemeProvider>
-        );
+        const { container } = rendersWithProviders(<About isDark={false}/>)
 
         const section = container.querySelector('#about');
         expect(section).toBeInTheDocument();

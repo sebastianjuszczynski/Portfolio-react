@@ -1,19 +1,14 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import SocialsIcons from './SocialsIcons';
-import { ThemeProvider } from 'styled-components';
 import { lightTheme } from '../../../styles/theme';
 import { socials } from './SocialsIconsData';
+import rendersWithTheme from'../../../__tests__/testsUtils/rendersWithTheme';
 
 describe('SocialsIcons', () => {
+    beforeEach(() => {
+        rendersWithTheme(<ul><SocialsIcons isFooter /></ul>)
+    });
     test('renders all social icons as links with correct labels, hrefs, target and aria-label', () => {
-        render(
-            <ThemeProvider theme={lightTheme}>
-                <ul>
-                    <SocialsIcons />
-                </ul>
-            </ThemeProvider>
-        );
-
         const links = screen.getAllByRole('link');
         expect(links).toHaveLength(socials.length);
 
@@ -26,15 +21,7 @@ describe('SocialsIcons', () => {
     });
 
     test('applies correct styles and hover effects when isFooter is true', () => {
-        const { getAllByRole } = render(
-            <ThemeProvider theme={lightTheme}>
-                <ul>
-                    <SocialsIcons isFooter />
-                </ul>
-            </ThemeProvider>
-        );
-
-        const icons = getAllByRole('link').map(link => link.firstChild);
+        const icons = screen.getAllByRole('link').map(link => link.firstChild);
 
         icons.forEach(icon => {
             expect(icon).toHaveStyleRule('color', lightTheme.colors.textWhite);
@@ -51,15 +38,7 @@ describe('SocialsIcons', () => {
         });
     });
     test('renders all svgs in every link', () => {
-        const { getAllByRole } = render(
-            <ThemeProvider theme={lightTheme}>
-                <ul>
-                    <SocialsIcons />
-                </ul>
-            </ThemeProvider>
-        );
-
-        const svgs = getAllByRole('link').map(link => link.querySelector('svg'));
+        const svgs = screen.getAllByRole('link').map(link => link.querySelector('svg'));
         svgs.forEach(svg => expect(svg).toBeInTheDocument());
     });
 });

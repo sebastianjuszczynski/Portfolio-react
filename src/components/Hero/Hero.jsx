@@ -50,7 +50,7 @@ const Hero = () => {
                 initial="hidden"
                 animate="visible"
             >
-                <Arrow href="#about" aria-label="Scroll to skills section">
+                <Arrow href="#about" aria-label="Scroll to about section">
                     <FontAwesomeIcon icon={faAngleDown} bounce />
                 </Arrow>
             </ArrowContainer>

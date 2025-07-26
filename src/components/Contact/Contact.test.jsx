@@ -1,11 +1,9 @@
 import { screen, act, fireEvent } from '@testing-library/react';
 import Contact from './Contact';
 import rendersWithProviders from '../../__tests__/testsUtils/rendersWithProviders';
-import { getTranslations } from '../../__tests__/testsUtils/getTranslations';
+import { tEn, tPl } from '../../__tests__/testsUtils/getTranslations';
 
 describe('Contact component', () => {
-    const tEn = getTranslations('en');
-    const tPl = getTranslations('pl');
     beforeEach(() => {
         rendersWithProviders(<Contact />)
     });
@@ -36,7 +34,6 @@ describe('Contact component', () => {
                 json: () => Promise.resolve({}),
             })
         );
-
 
         fireEvent.change(screen.getByPlaceholderText(tPl('contactName')), {
             target: { value: 'Sebastian' },

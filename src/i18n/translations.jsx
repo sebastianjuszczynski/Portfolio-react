@@ -1,5 +1,3 @@
-import { FooterParagraph } from "../components/Footer/styles";
-
 const translations = {
   en: {
     home: "Home",

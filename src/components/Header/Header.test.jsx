@@ -3,7 +3,6 @@ import Header from './Header';
 import rendersWithProviders from '../../__tests__/testsUtils/rendersWithProviders';
 import { expectLinks, linksEN, linksPL} from '../../__tests__/testsUtils/expectLinks';
 
-
 describe('Header components', () => {
     let toggleMock;
 

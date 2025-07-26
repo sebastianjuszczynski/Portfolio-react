@@ -4,7 +4,7 @@ const SectionHeader = ({ sub, span, title }) => (
     <>
     <Subheader>
         {sub}
-        <Span>
+        <Span data-testid="skills-span">
             {span}
         </Span>
     </Subheader>

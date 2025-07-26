@@ -1,6 +1,7 @@
 import { screen, act } from '@testing-library/react';
 import About from './About';
 import rendersWithProviders from'../../__tests__/testsUtils/rendersWithProviders';
+import { tEn, tPl } from '../../__tests__/testsUtils/getTranslations';
 
 describe('About component', () => {
     test('About renders correctly and reacts to language change', () => {
@@ -11,14 +12,14 @@ describe('About component', () => {
         const image = screen.getByAltText(/developer thinking about code/i);
         expect(image).toBeInTheDocument();
         expect(image).toHaveAttribute('loading', 'lazy');
-        expect(screen.getByText(/about me/i)).toBeInTheDocument();
-        expect(screen.getByRole('link', { name: /contact me/i })).toBeInTheDocument();
+        expect(screen.getByText(tEn('aboutTitle'))).toBeInTheDocument();
+        expect(screen.getByRole('link', { name: tEn('aboutLink') } )).toBeInTheDocument();
 
         act(() => {
             window.setTestLang('pl');
         });
-        expect(screen.getByText(/^o mnie$/i)).toBeInTheDocument();
-        expect(screen.getByRole('link', { name: /napisz do mnie/i })).toBeInTheDocument();
+        expect(screen.getByText(tPl('about'))).toBeInTheDocument();
+        expect(screen.getByRole('link', { name: tPl('aboutLink') })).toBeInTheDocument();
 
 
     });

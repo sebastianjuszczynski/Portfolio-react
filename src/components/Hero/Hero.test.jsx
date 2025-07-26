@@ -2,6 +2,7 @@ import { screen, act } from '@testing-library/react';
 import Hero from './Hero';
 import rendersWithProviders from '../../__tests__/testsUtils/rendersWithProviders';
 import { socials } from '../common/SocialsIcons/SocialsIconsData';
+import { tEn, tPl } from '../../__tests__/testsUtils/getTranslations';
 
 describe('Hero component', () => {
     beforeEach(() => {
@@ -16,16 +17,16 @@ describe('Hero component', () => {
     });
 
     test('renders english title and description', () => {
-        expect(screen.getByText(/Hi, I'm/i)).toBeInTheDocument();
-        expect(screen.getByText(/Frontend Developer focused on simplicity and speed/i)).toBeInTheDocument();
+        expect(screen.getByText(tEn('titleSpan'))).toBeInTheDocument();
+        expect(screen.getByText(tEn('titleDescription'))).toBeInTheDocument();
     });
 
     test('updates texts when language is changed', () => {
         act(() => {
             window.setTestLang('pl');
         });
-        expect(screen.getByText(/Cześć, jestem/i)).toBeInTheDocument();
-        expect(screen.getByText(/Frontend Developer skupiony na prostocie i szybkości/i)).toBeInTheDocument();
+        expect(screen.getByText(tPl('titleSpan'))).toBeInTheDocument();
+        expect(screen.getByText(tPl('titleDescription'))).toBeInTheDocument();
     });
 
     test('renders social media links inside hero section', () => {

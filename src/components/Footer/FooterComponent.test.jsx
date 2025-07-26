@@ -2,9 +2,9 @@ import { screen, act, within } from '@testing-library/react';
 import FooterComponent from './FooterComponent';
 import { lightTheme } from '../../styles/theme';
 import { socials } from '../common/SocialsIcons/SocialsIconsData';
-import rendersWithProviders from'../../__tests__/testsUtils/rendersWithProviders';
+import rendersWithProviders from '../../__tests__/testsUtils/rendersWithProviders';
 import { expectLinks, linksEN, linksPL } from '../../__tests__/testsUtils/expectLinks';
-
+import { tEn, tPl } from '../../__tests__/testsUtils/getTranslations';
 
 describe('Footer component', () => {
     beforeEach(() => {
@@ -26,19 +26,27 @@ describe('Footer component', () => {
     });
 
     test('renders text in paragraph', () => {
-        expect(screen.getByText(/All rights reserved by/i)).toBeInTheDocument();
+        expect(
+            screen.getByText((content) =>
+                content.includes(tEn('footerParagraph'))
+            )
+        ).toBeInTheDocument();
     });
     test('updates text on language change', () => {
         act(() => {
             window.setTestLang('pl');
         });
-         expectLinks(linksPL);
-        expect(screen.getByText(/Prawa zastrzeżone by/i)).toBeInTheDocument();
+        expectLinks(linksPL);
+        expect(
+            screen.getByText((content) =>
+                content.includes(tPl('footerParagraph'))
+            )
+        ).toBeInTheDocument();
     });
     test('renders social media links and svgs in footer with correct attributes and styles', () => {
         const socialsContainer = screen.getByTestId('footer-socials');
         const { getByRole } = within(socialsContainer);
-        
+
         const svgIcons = socialsContainer.querySelectorAll('svg');
         expect(svgIcons).toHaveLength(socials.length);
         svgIcons.forEach(icon => {

@@ -25,7 +25,7 @@ const Intro = ({ onComplete }) => {
 
   return (
     <IntroWrapper>
-      <Logo ref={logoRef} style={{ transform: 'translateY(30px)' }}>
+      <Logo ref={logoRef}>
         SEB.DEV
       </Logo>
     </IntroWrapper>

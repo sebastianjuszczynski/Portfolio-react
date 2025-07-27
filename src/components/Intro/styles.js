@@ -17,4 +17,5 @@ export const Logo = styled.h1`
   font-weight: 100;
   color: ${({ theme }) => theme.colors.accent};
   opacity: 0;
+  transform: translateY(30px);
 `;

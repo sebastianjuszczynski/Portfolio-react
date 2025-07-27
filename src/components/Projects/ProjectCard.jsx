@@ -1,7 +1,6 @@
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
 import ScrollRevealSection from "../common/ScrollRevealSection/ScrollRevealSection";
 import { itemVariants } from '../common/Animations/animationsVariants';
-import useIsMobile from '../../hooks/useInMobile.js';
 import LinkIcon from '../../assets/icons/link.svg';
 import {
     ProjectCard as Card, ProjectImage,
@@ -12,7 +11,6 @@ import {
 
 
 const ProjectCard = ({ title, description, image, video, tech, link }) => {
-    const isMobile = useIsMobile();
     const { lang, t } = useLanguage();
 
     return (

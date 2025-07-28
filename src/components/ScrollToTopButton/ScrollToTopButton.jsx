@@ -9,7 +9,7 @@ const ScrollToTopButton = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsVisible(window.scrollY > 300)
+            setIsVisible(window.scrollY >= 300)
         };
 
         const handleFocusIn = (e) => {

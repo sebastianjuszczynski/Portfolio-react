@@ -1,4 +1,4 @@
-import { screen, act } from '@testing-library/react';
+import { screen, act, fireEvent } from '@testing-library/react';
 import ProjectCard from './ProjectCard';
 import rendersWithProviders from '../../__tests__/testsUtils/rendersWithProviders';
 import { tEn, tPl } from '../../__tests__/testsUtils/getTranslations';
@@ -66,4 +66,26 @@ describe('ProjectCard component', () => {
         });
         expect(link).toHaveTextContent(tEn('projectsLink'));
     });
+    test('plays video on hover and pauses on mouse leave', () => {
+        const video = screen.getByText(/your browser does not support the video tag/i).closest('video');
+
+        Object.defineProperty(HTMLMediaElement.prototype, 'play', {
+            configurable: true,
+            value: vi.fn(),
+        });
+
+        Object.defineProperty(HTMLMediaElement.prototype, 'pause', {
+            configurable: true,
+            value: vi.fn(),
+        });
+
+        const card = screen.getByText(mockProject.title).closest('div');
+
+        fireEvent.mouseEnter(card);
+        expect(video.play).toHaveBeenCalled();
+
+        fireEvent.mouseLeave(card);
+        expect(video.pause).toHaveBeenCalled();
+    });
 });
+

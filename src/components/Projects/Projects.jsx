@@ -13,7 +13,7 @@ const Projects = () => {
     const { t } = useLanguage();
 
     return (
-        <Section id="projects" $direction="column">
+        <Section id="projects" data-testid="projects-section" $direction="column">
                     <TextContainer variants={itemVariants}>
                         <SectionHeader
                             sub={t("projectsSubheader")}

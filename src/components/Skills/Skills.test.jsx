@@ -1,7 +1,7 @@
 import { screen, act } from '@testing-library/react';
 import Skills from './Skills';
 import { skillsData } from './skillsData';
-import rendersWithProviders from'../../__tests__/testsUtils/rendersWithProviders';
+import rendersWithProviders from '../../__tests__/testsUtils/rendersWithProviders';
 import { tEn, tPl } from '../../__tests__/testsUtils/getTranslations';
 
 describe('Skills component', () => {
@@ -32,7 +32,7 @@ describe('Skills component', () => {
     test('renders translated header elements', () => {
         expect(screen.getByText(tEn('skills'))).toBeInTheDocument();
         expect(screen.getByText(tEn('skillsSubheader'))).toBeInTheDocument();
-        expect(screen.getByTestId('skills-span')).toHaveTextContent(tEn('skillsSpan').trim());
+        expect(screen.getByTestId('subheader-span')).toHaveTextContent(tEn('skillsSpan').trim());
         expect(screen.getByText(tEn('skillsTitle'))).toBeInTheDocument();
     });
     test('updates text on language change', () => {
@@ -41,7 +41,7 @@ describe('Skills component', () => {
         });
         expect(screen.getByText(tPl('skills'))).toBeInTheDocument();
         expect(screen.getByText(tPl('skillsSubheader'))).toBeInTheDocument();
-         expect(screen.getByTestId('skills-span')).toHaveTextContent(tPl('skillsSpan').trim());
+        expect(screen.getByTestId('subheader-span')).toHaveTextContent(tPl('skillsSpan').trim());
         expect(screen.getByText(tPl('skillsTitle'))).toBeInTheDocument();
     });
 });

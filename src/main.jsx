@@ -1,36 +1,20 @@
-import { StrictMode, useState, useEffect } from 'react'
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from './styles/GlobalStyles.js'
-import { darkTheme, lightTheme } from './styles/theme.js'
+import useTheme from './hooks/useTheme.js'
 
 const Root = () => {
-  const [isDark, setIsDark] = useState(() => {
-    return localStorage.getItem('theme') === 'dark';
-  });
-
-  const toggleTheme = () => {
-    setIsDark((prev) => {
-      const newValue = !prev;
-      localStorage.setItem('theme', newValue ? 'dark' : 'light');
-      return newValue;
-    });
-  };
-
-  const theme = isDark ? darkTheme : lightTheme;
-
-  useEffect(() => {
-    document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
-  }, [isDark]);
+  const { isDark, setIsDark, toggleTheme, theme } = useTheme()
 
   return (
     <StrictMode>
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <App toggleTheme={toggleTheme} isDark={isDark}/>
-    </ThemeProvider>
-  </StrictMode>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <App toggleTheme={toggleTheme} isDark={isDark} />
+      </ThemeProvider>
+    </StrictMode>
   );
 };
 

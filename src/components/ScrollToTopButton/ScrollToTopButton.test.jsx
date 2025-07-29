@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/react';
 import ScrollToTopButton from './ScrollToTopButton';
 import rendersWithTheme from '../../__tests__/testsUtils/rendersWithTheme'
 

@@ -79,8 +79,8 @@ const Header = ({ toggleTheme, isDark }) => {
                             </LangOption>
                         </LangOptions>
                     </LangDropdown>
-                    <MobileHamburger ref={menuRef} variants={headerItemVariants}>
-                        <Hamburger rounded toggled={isOpen} toggle={handleIsOpen} aria-expanded={handleIsOpen} data-testid="hamburger" />
+                    <MobileHamburger ref={menuRef} variants={headerItemVariants} data-testid="hamburger">
+                        <Hamburger rounded toggled={isOpen} toggle={handleIsOpen} aria-expanded={handleIsOpen}  />
                     </MobileHamburger>
                 </Controls>
             </Nav>

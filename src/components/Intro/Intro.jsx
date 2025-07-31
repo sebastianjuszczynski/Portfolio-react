@@ -25,7 +25,7 @@ const Intro = ({ onComplete }) => {
 
   return (
     <IntroWrapper>
-      <Logo ref={logoRef}>
+      <Logo ref={logoRef} data-testid="intro-logo">
         SEB.DEV
       </Logo>
     </IntroWrapper>

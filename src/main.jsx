@@ -6,7 +6,7 @@ import { GlobalStyle } from './styles/GlobalStyles.js'
 import useTheme from './hooks/useTheme.js'
 
 const Root = () => {
-  const { isDark, setIsDark, toggleTheme, theme } = useTheme()
+  const { isDark, toggleTheme, theme } = useTheme()
 
   return (
     <StrictMode>

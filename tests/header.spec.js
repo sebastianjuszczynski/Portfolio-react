@@ -14,5 +14,25 @@ test.describe('Header', () => {
     const scrollTop = await page.evaluate(() => window.scrollY);
     expect(scrollTop).toBeLessThan(100);
   });
-  
+
+  test('Navigation links are visible and have correct hrefs', async ({ page }) => {
+    const links = page.locator('#main-menu a');
+    await expect(links).toHaveCount(5);
+
+    const expectedHrefs = ['#home', '#about', '#skills', '#projects', '#contact'];
+
+    for (const [index, href] of expectedHrefs.entries()) {
+      const link = links.nth(index);
+      await expect(link).toHaveAttribute('href', href);
+      await expect(link).toBeVisible();
+    }
+  });
+
+  test('Navigation links scrolls to correct section on click', async ({ page }) => {
+    const aboutLink = page.locator('#main-menu a[href="#about"]');
+    await aboutLink.click();
+    const aboutHeading = page.locator('#about h2');
+    await expect(aboutHeading).toBeVisible({ timeout: 2000 });
+  });
+
 });

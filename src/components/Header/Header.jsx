@@ -64,9 +64,9 @@ const Header = ({ toggleTheme, isDark }) => {
                             )}
                         </AnimatePresence>
                     </ThemeToggleButton>
-                    <LangDropdown role="button" aria-label="Change language" onClick={handleLangOpen} ref={langRef} variants={headerItemVariants}>
-                        <LangButton type="button" aria-haspopup="listbox"
-                            aria-expanded="false">
+                    <LangDropdown onClick={handleLangOpen} ref={langRef} variants={headerItemVariants}>
+                        <LangButton role="button" aria-haspopup="listbox"
+                            aria-expanded={isLangOpen} aria-label="Change language">
                             <FlagIcon src={lang === "en" ? gbIcon : plIcon} alt={lang === "en" ? "English" : "Polski"} />
                             <LangCode> {lang.toUpperCase()}</LangCode>
                         </LangButton>

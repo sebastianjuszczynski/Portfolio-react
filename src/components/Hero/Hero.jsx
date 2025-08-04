@@ -26,6 +26,7 @@ const Hero = () => {
                 <AnimationWrapper
                     variants={heroItemVariants}>
                     <ImageContainer
+                        data-testid="hero-image-container"
                         $clicked={clicked}
                         onClick={isMobile ? () => setClicked(!clicked) : undefined}
                         onMouseEnter={!isMobile ? () => setClicked(true) : undefined}
@@ -37,10 +38,10 @@ const Hero = () => {
                 <TextContainer>
                     <TextTitle variants={heroItemVariants}>
                         {t("titleSpan")}
-                        <TitleSpan variants={heroItemVariants}>Sebastian</TitleSpan>
+                        <TitleSpan variants={heroItemVariants} data-testid="hero-span">Sebastian</TitleSpan>
                     </TextTitle>
                     <TextDescription variants={heroItemVariants}>{t("titleDescription")}</TextDescription>
-                    <SocialsContainer variants={heroItemVariants}>
+                    <SocialsContainer variants={heroItemVariants} data-testid="hero-socials">
                         <SocialsIcons />
                     </SocialsContainer>
                 </TextContainer>

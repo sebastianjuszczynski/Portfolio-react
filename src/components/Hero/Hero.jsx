@@ -3,7 +3,7 @@ import useInMobile from '../../hooks/useInMobile';
 import { useLanguage } from '../../i18n/LanguageContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import heroImage from '../../assets/images/building-a-website.svg';
+import heroImage from '../../assets/images/building-a-website.png';
 import {
     Section, SectionContainer, ImageContainer, Image, TextContainer, TextTitle, TitleSpan, TextDescription,
     SocialsContainer, ArrowContainer, Arrow, AnimationWrapper

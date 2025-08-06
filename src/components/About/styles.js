@@ -73,29 +73,29 @@ export const ImageWrapper = styled(motion.div)`
 
 export const ImageContainer = styled.div`
     background-color: ${({ theme }) => theme.colors.transparent};
-    padding: ${({ theme }) => theme.spacing.padding.image};
     border-radius: ${({ theme }) => theme.borders.radius.base};
     border: 2px solid ${({ theme }) => theme.colors.accentHover};
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
 
     @media (min-width: 1024px) {
         max-width: 450px;
         height: auto;
-        overflow: hidden;
     }
 `;
 
 export const Image = styled.img`
-    max-width: 280px;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 
     @media (min-width: 768px) {
-        max-width: 460px;
+        max-width: 560px;
     }
 
     @media (min-width: 1024px) {
         display: block;
         width: 100%;
-        height: 160px;
     }
 `;
 

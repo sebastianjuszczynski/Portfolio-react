@@ -1,11 +1,11 @@
 import { Section as StyledSection, SectionContainer } from './styles';
 import ScrollRevealSection from '../ScrollRevealSection/ScrollRevealSection';
 
-const Section = ({ children, $direction, ...rest }) => {
+const Section = ({ children, $direction, $gap, ...rest }) => {
     return (
         <StyledSection {...rest}>
             <ScrollRevealSection>
-                <SectionContainer $direction={$direction}>
+                <SectionContainer $direction={$direction} $gap={$gap}>
                     {children}
                 </SectionContainer>
             </ScrollRevealSection>

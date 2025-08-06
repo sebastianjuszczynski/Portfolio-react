@@ -113,7 +113,7 @@ export const lightTheme = {
         accentHover: '#A880F9',
     },
     backgrounds: {
-        main: 'linear-gradient(to top right, #FFFFFF, #EADFFE)',
+        main: 'linear-gradient(to top right, #FFFFFF, #dfd0faff)',
         menuMobile: '#2A1454',
         headerScrolled: '#FFFFFF',
         secondary: '#F6F3FC',

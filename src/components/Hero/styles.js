@@ -7,10 +7,9 @@ export const Section = styled.section`
     text-align: center;
     justify-content: center;
     margin: ${({ theme }) => theme.spacing.margin.center};
-    padding: ${({ theme }) => theme.spacing.padding.lg};
     gap: ${({ theme }) => theme.spacing.gap.base};
     color: ${({ theme }) => theme.colors.textMain};
-    height: 100vh;
+    height: calc(100vh - 50px);
 
     @media (min-width: 1024px) {
         align-items: center;
@@ -25,12 +24,12 @@ export const SectionContainer = styled(motion.div)`
     align-items: center;
     padding: ${({ theme }) => theme.spacing.padding.lg};
     gap: ${({ theme }) => theme.spacing.gap.base};
-    margin-top: 60px;
 
     @media (min-width: 1024px) {
         flex-direction: row;
         justify-content: space-around;
         width: 85%;
+        margin-top: 60px;
     }
 `;
 export const AnimationWrapper = styled(motion.div)`
@@ -38,12 +37,12 @@ export const AnimationWrapper = styled(motion.div)`
 `;
 
 export const ImageContainer = styled(motion.div)`
-    padding: ${({ theme }) => theme.spacing.padding.image};
+    
     background-color: ${({ theme }) => theme.colors.heroImage};
     border-radius: ${({ theme }) => theme.borders.radius.lg};
     will-change: transform;
     transform: ${({ $clicked }) => $clicked ? 'skewX(0deg) skewY(0deg)' : 'skewX(-4deg) skewY(4deg)'};
-    box-shadow: ${({ $clicked, theme }) => $clicked ? `0 0 0 2px ${theme.colors.accentHover}` : 'none'};
+    box-shadow: ${({ $clicked, theme }) => $clicked ? `0 0 0 3px ${theme.colors.accentHover}` : 'none'};
     transition: ${({ theme }) => theme.transition.all};
 
     @media (min-width: 768px) {
@@ -53,20 +52,20 @@ export const ImageContainer = styled(motion.div)`
 
     @media (min-width: 1024px) {
         width: 100%;
-        padding: ${({ theme }) => theme.spacing.padding.xxl};
     }
 `;
 
 export const Image = styled.img`
-    max-width: 85%;
+    max-width: 100%;
     height: auto;
+    border-radius: ${({ theme }) => theme.borders.radius.lg};
 
     @media (max-width: 360px) {
-        max-width: 70%;
+        max-width: 100%;
     }
 
     @media (min-width: 1024px) {
-        max-width: 300px;
+        max-width: 500px;
         height: auto;
     }
 `;

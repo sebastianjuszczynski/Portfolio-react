@@ -1,4 +1,4 @@
-import aboutImage from '../../assets/images/code-thinking.svg';
+import aboutImage from '../../assets/images/code-thinking.png';
 import { ImageContainer, Image } from './styles';
 
 const AboutImage = () => (

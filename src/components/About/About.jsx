@@ -8,7 +8,7 @@ import { ImageWrapper } from './styles';
 const About = ({ isDark }) => {
 
   return (
-    <Section $isDark={isDark} $align="left" id="about">
+    <Section $isDark={isDark} $align="left" $gap="lg" id="about">
       <TextContainer variants={itemVariants} $order="1" $alignItems="flex-start">
         <AboutText />
       </TextContainer>

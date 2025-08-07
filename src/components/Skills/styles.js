@@ -17,13 +17,13 @@ export const SkillsItem = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: ${({ theme }) => theme.transition.transform};
 
   @media (min-width: 768px) {
-    flex: 0 0 calc(16.66% - 1rem);
-    transition: ${({ theme }) => theme.transition.transform};
+    flex: 0 0 calc(16.66% - 1rem);  
   }
   &:hover {
-    transform: translateY(-5px);
+    cursor: pointer;
   }
 `;
 

@@ -11,24 +11,24 @@ const Skills = () => {
 
     return (
         <Section id="skills" $bg="transparent" $direction="column">
-                    <TextContainer variants={itemVariants}>
-                        <SectionHeader
-                            sub={t("skillsSubheader")}
-                            span={t("skillsSpan")}
-                            title={t("skillsTitle")}
-                        />
-                    </TextContainer>
-                    <ImagesContainer>
-                        {skillsData.map(({ name, image }) => (
-                            <SkillsItem variants={itemVariants} key={name} title={name}>
-                                <Image src={image}
-                                    alt={`${name} logo`} loading="lazy" />
-                            </SkillsItem>
-                        ))}
-                    </ImagesContainer>
-                    <SkillsDescription variants={itemVariants}>
-                        {t("skillsDescription")}
-                    </SkillsDescription>
+            <TextContainer variants={itemVariants}>
+                <SectionHeader
+                    sub={t("skillsSubheader")}
+                    span={t("skillsSpan")}
+                    title={t("skillsTitle")}
+                />
+            </TextContainer>
+            <ImagesContainer>
+                {skillsData.map(({ name, image }) => (
+                    <SkillsItem variants={itemVariants} whileHover={{ y: -5, scale: 1.12 }} key={name} title={name}>
+                        <Image src={image}
+                            alt={`${name} logo`} loading="lazy" />
+                    </SkillsItem>
+                ))}
+            </ImagesContainer>
+            <SkillsDescription variants={itemVariants}>
+                {t("skillsDescription")}
+            </SkillsDescription>
         </Section>
     );
 };

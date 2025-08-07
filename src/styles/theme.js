@@ -52,7 +52,6 @@ const sharedTheme = {
             headerControls: '1rem 0',
             techIcons: '0.5rem 0.6rem',
             button: '0.5rem',
-            image: '2rem 0.625rem',
             inputs: '1rem',
         },
     },

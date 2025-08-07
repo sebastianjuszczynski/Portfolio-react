@@ -21,9 +21,4 @@ describe('AboutImage component', () => {
         expect(wrapper).toHaveStyleRule('border', `2px solid ${lightTheme.colors.accentHover}`);
     });
 
-    test('ImageContainer has correct padding from shared theme', () => {
-        const { getByTestId } = utils;
-        const wrapper = getByTestId('image-wrapper');
-        expect(wrapper).toHaveStyleRule('padding', lightTheme.spacing.padding.image);
-    });
 });

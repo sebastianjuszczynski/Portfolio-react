@@ -105,15 +105,15 @@ public/
 
 ## 📸 Screenshots / Demo
 ### 🌙 Theme toggle (Light / Dark)
-![Theme toggle demo](assets/gifs/themeToggle.gif)
+![Theme toggle demo](src/assets/gifs/themeToggle.gif)
 ### 📱 Mobile menu animation
-![Mobile menu animation demo](assets/gifs/mobileMenu.gif)
+![Mobile menu animation demo](src/assets/gifs/mobileMenu.gif)
 ### 🌍 Language switch (EN/PL)
-![Language switch demo](assets/gifs/langSwitch.gif)
+![Language switch demo](src/assets/gifs/langSwitch.gif)
 ### ✉️ Contact form with validation
-![Contact form with validation demo](assets/gifs/form.gif)
-### 🧝‍♂️ Scroll Spy & Animations
-![Scroll Spy & Animations demo](assets/gifs/animations.gif)
+![Contact form with validation demo](src/assets/gifs/form.gif)
+### 🧝‍♂️ Animations
+![Scroll Spy & Animations demo](src/assets/gifs/animations.gif)
 ---
 
 ## 🤔 Why This Project?

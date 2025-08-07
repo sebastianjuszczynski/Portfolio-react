@@ -841,7 +841,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: ${({theme:t})=>t.spacing.padding.lg};
+    padding: ${({theme:t})=>t.spacing.padding.xl};
     gap: ${({theme:t})=>t.spacing.gap.base};
 
     @media (min-width: 1024px) {
@@ -853,26 +853,27 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 `,hz=I(Et.div)`
     display: block
 `,mz=I(Et.div)`
-    
-    background-color: ${({theme:t})=>t.colors.heroImage};
+    background-color: ${({theme:t})=>t.colors.transparent};
     border-radius: ${({theme:t})=>t.borders.radius.lg};
     will-change: transform;
     transform: ${({$clicked:t})=>t?"skewX(0deg) skewY(0deg)":"skewX(-4deg) skewY(4deg)"};
     box-shadow: ${({$clicked:t,theme:n})=>t?`0 0 0 3px ${n.colors.accentHover}`:"none"};
     transition: ${({theme:t})=>t.transition.all};
+    width: 100%;
+    height:100%;
 
     @media (min-width: 768px) {
-         width: 70%;
+         width: 90%;
          margin: 0 auto;
     }
-
     @media (min-width: 1024px) {
         width: 100%;
     }
 `,pz=I.img`
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
     border-radius: ${({theme:t})=>t.borders.radius.lg};
+    object-fit: cover;
 
     @media (max-width: 360px) {
         max-width: 100%;
@@ -881,6 +882,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     @media (min-width: 1024px) {
         max-width: 500px;
         height: auto;
+        display: block;
     }
 `,gz=I.div`
     display: flex;
@@ -1200,13 +1202,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: ${({theme:t})=>t.transition.transform};
 
   @media (min-width: 768px) {
-    flex: 0 0 calc(16.66% - 1rem);
-    transition: ${({theme:t})=>t.transition.transform};
+    flex: 0 0 calc(16.66% - 1rem);  
   }
   &:hover {
-    transform: translateY(-5px);
+    cursor: pointer;
   }
 `,Iz=I.img`
  width: 30px;
@@ -1221,7 +1223,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   @media (min-width: 768px) {
     font-size: ${({theme:t})=>t.font.sizes.lg};
   }
-`,Jz=()=>{const{t}=da();return j.jsxs(Hc,{id:"skills",$bg:"transparent",$direction:"column",children:[j.jsx(Bc,{variants:we,children:j.jsx($c,{sub:t("skillsSubheader"),span:t("skillsSpan"),title:t("skillsTitle")})}),j.jsx(Zz,{children:Kz.map(({name:n,image:a})=>j.jsx(Qz,{variants:we,title:n,children:j.jsx(Iz,{src:a,alt:`${n} logo`,loading:"lazy"})},n))}),j.jsx(Wz,{variants:we,children:t("skillsDescription")})]})},t9="/Portfolio-react/assets/movies-browser-HpsHfGg0.png",e9="/Portfolio-react/assets/weather-app-C_TEbP_x.png",qx="/Portfolio-react/assets/movies-browser-DYTIT5qy.mp4",n9=[{title:"Movies Browser",description:{en:"Movie browser app using external API.",pl:"Aplikacja do przeglądania filmów z użyciem API."},image:t9,video:qx,tech:["html5","css3","javascript","react","redux"],link:"https://sebastianjuszczynski.github.io/movies-browser"},{title:"Weather App",description:{en:"Simple weather forecast app with location search.",pl:"Prosta aplikacja pogodowa z wyszukiwaniem lokalizacji."},image:e9,video:qx,tech:["html5","css3","javascript"],link:"https://sebastianjuszczynski.github.io/Weather-App/"}],i9=t=>Z.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:24,height:24,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:2,strokeLinecap:"round",strokeLinejoin:"round",className:"lucide lucide-link-icon lucide-link",...t},Z.createElement("path",{d:"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"}),Z.createElement("path",{d:"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"})),a9=I(Et.div)`
+`,Jz=()=>{const{t}=da();return j.jsxs(Hc,{id:"skills",$bg:"transparent",$direction:"column",children:[j.jsx(Bc,{variants:we,children:j.jsx($c,{sub:t("skillsSubheader"),span:t("skillsSpan"),title:t("skillsTitle")})}),j.jsx(Zz,{children:Kz.map(({name:n,image:a})=>j.jsx(Qz,{variants:we,whileHover:{y:-5,scale:1.12},title:n,children:j.jsx(Iz,{src:a,alt:`${n} logo`,loading:"lazy"})},n))}),j.jsx(Wz,{variants:we,children:t("skillsDescription")})]})},t9="/Portfolio-react/assets/movies-browser-HpsHfGg0.png",e9="/Portfolio-react/assets/weather-app-C_TEbP_x.png",qx="/Portfolio-react/assets/movies-browser-DYTIT5qy.mp4",n9=[{title:"Movies Browser",description:{en:"Movie browser app using external API.",pl:"Aplikacja do przeglądania filmów z użyciem API."},image:t9,video:qx,tech:["html5","css3","javascript","react","redux"],link:"https://sebastianjuszczynski.github.io/movies-browser"},{title:"Weather App",description:{en:"Simple weather forecast app with location search.",pl:"Prosta aplikacja pogodowa z wyszukiwaniem lokalizacji."},image:e9,video:qx,tech:["html5","css3","javascript"],link:"https://sebastianjuszczynski.github.io/Weather-App/"}],i9=t=>Z.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:24,height:24,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:2,strokeLinecap:"round",strokeLinejoin:"round",className:"lucide lucide-link-icon lucide-link",...t},Z.createElement("path",{d:"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"}),Z.createElement("path",{d:"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"})),a9=I(Et.div)`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1643,4 +1645,4 @@ a {
     overflow: hidden;
     height: 100vh;
 }
-`,_c={colors:{error:"#e53935",valid:"#4caf50",textWhite:"#FFFFFF",transparent:"transparent",heroImage:"#0B1013",inputs:"#e5dcf8"},font:{main:"'Inter', sans-serif",logo:"'Orbitron', sans-serif",sizes:{base:"1rem",sm:"0.875rem",lg:"1.25rem",xl:"2rem",xxl:"2.5rem"}},spacing:{gap:{xs:"0.25rem",sm:"0.5rem",base:"1rem",lg:"2rem",xl:"4rem"},margin:{center:"0 auto",base:"1rem auto",lg:"2rem auto",xl:"3rem auto",topSm:"0.25rem",topLg:"3rem",topXl:"5rem",bottomSm:"0.5rem",bottomLg:"2rem",bottomXl:"7rem"},padding:{none:"0",xs:"0.25rem 0.25rem",sm:"0.25rem 0.5rem",base:"0 3rem",lg:"1rem 1.25rem",xl:"2rem 2rem 0.5rem 2rem",xxl:"3rem",headerNavSm:"0 0.5rem",headerNav:"0 1rem",headerControls:"1rem 0",techIcons:"0.5rem 0.6rem",button:"0.5rem",image:"2rem 0.625rem",inputs:"1rem"}},borders:{radius:{sm:"0.25rem",base:"0.5rem",lg:"1rem",full:"9999px",rounded:"50%"},focus:t=>`2px solid ${t.colors.accentHover}`,error:t=>`2px solid ${t.colors.error}`,valid:t=>`2px solid ${t.colors.valid}`},transition:{opacity:"opacity 0.4s ease-in-out",color:"color 0.4s ease-in-out",transform:"transform 0.4s ease-in-out",background:"background-color 0.4s ease-in-out",top:"top 0.4s ease-in-out",all:"all 0.4s ease-in-out"}},q9={..._c,isDark:!0,colors:{..._c.colors,textMain:"#FAFAFA",textSecondary:"#7f7985",accent:"#FFFFFF",accentHover:"#A880F9"},backgrounds:{main:"linear-gradient(to top right, #0F0715 0%, #25153F 20%, #0F0715 40%, #25153F 60%, #0F0715 80%, #25153F 100%)",menuMobile:"#2A1454",headerScrolled:"rgba(0, 0, 0, 0.8)"},gradients:{accent:"linear-gradient(to right, #5d27ca 0%, #7b4ed1 50%, #9672d9 100%)",accentHover:"linear-gradient(to right, #9672d9 0%, #7b4ed1 50%, #5d27ca 100%)"}},G9={..._c,isDark:!1,colors:{..._c.colors,textMain:"#2A1454",textSecondary:"#6B6670",accent:"#2A1454",accentHover:"#A880F9"},backgrounds:{main:"linear-gradient(to top right, #FFFFFF, #dfd0faff)",menuMobile:"#2A1454",headerScrolled:"#FFFFFF",secondary:"#F6F3FC"},gradients:{accent:"linear-gradient(to right, #9672e4 0%, #2a0a69 100%)",accentHover:"linear-gradient(to right, #2a0a69 0%, #9672e4 100%)"}},X9=()=>{const[t,n]=Z.useState(()=>localStorage.getItem("theme")==="dark"),a=()=>{n(o=>{const u=!o;return localStorage.setItem("theme",u?"dark":"light"),u})},r=t?q9:G9;return Z.useEffect(()=>{document.body.setAttribute("data-theme",t?"dark":"light")},[t]),{isDark:t,setIsDark:n,toggleTheme:a,theme:r}},F9=()=>{const{isDark:t,toggleTheme:n,theme:a}=X9();return j.jsx(Z.StrictMode,{children:j.jsxs(vE,{theme:a,children:[j.jsx(Y9,{}),j.jsx($9,{toggleTheme:n,isDark:t})]})})};yw.createRoot(document.getElementById("root")).render(j.jsx(F9,{}));
+`,_c={colors:{error:"#e53935",valid:"#4caf50",textWhite:"#FFFFFF",transparent:"transparent",heroImage:"#0B1013",inputs:"#e5dcf8"},font:{main:"'Inter', sans-serif",logo:"'Orbitron', sans-serif",sizes:{base:"1rem",sm:"0.875rem",lg:"1.25rem",xl:"2rem",xxl:"2.5rem"}},spacing:{gap:{xs:"0.25rem",sm:"0.5rem",base:"1rem",lg:"2rem",xl:"4rem"},margin:{center:"0 auto",base:"1rem auto",lg:"2rem auto",xl:"3rem auto",topSm:"0.25rem",topLg:"3rem",topXl:"5rem",bottomSm:"0.5rem",bottomLg:"2rem",bottomXl:"7rem"},padding:{none:"0",xs:"0.25rem 0.25rem",sm:"0.25rem 0.5rem",base:"0 3rem",lg:"1rem 1.25rem",xl:"2rem 2rem 0.5rem 2rem",xxl:"3rem",headerNavSm:"0 0.5rem",headerNav:"0 1rem",headerControls:"1rem 0",techIcons:"0.5rem 0.6rem",button:"0.5rem",inputs:"1rem"}},borders:{radius:{sm:"0.25rem",base:"0.5rem",lg:"1rem",full:"9999px",rounded:"50%"},focus:t=>`2px solid ${t.colors.accentHover}`,error:t=>`2px solid ${t.colors.error}`,valid:t=>`2px solid ${t.colors.valid}`},transition:{opacity:"opacity 0.4s ease-in-out",color:"color 0.4s ease-in-out",transform:"transform 0.4s ease-in-out",background:"background-color 0.4s ease-in-out",top:"top 0.4s ease-in-out",all:"all 0.4s ease-in-out"}},q9={..._c,isDark:!0,colors:{..._c.colors,textMain:"#FAFAFA",textSecondary:"#7f7985",accent:"#FFFFFF",accentHover:"#A880F9"},backgrounds:{main:"linear-gradient(to top right, #0F0715 0%, #25153F 20%, #0F0715 40%, #25153F 60%, #0F0715 80%, #25153F 100%)",menuMobile:"#2A1454",headerScrolled:"rgba(0, 0, 0, 0.8)"},gradients:{accent:"linear-gradient(to right, #5d27ca 0%, #7b4ed1 50%, #9672d9 100%)",accentHover:"linear-gradient(to right, #9672d9 0%, #7b4ed1 50%, #5d27ca 100%)"}},G9={..._c,isDark:!1,colors:{..._c.colors,textMain:"#2A1454",textSecondary:"#6B6670",accent:"#2A1454",accentHover:"#A880F9"},backgrounds:{main:"linear-gradient(to top right, #FFFFFF, #dfd0faff)",menuMobile:"#2A1454",headerScrolled:"#FFFFFF",secondary:"#F6F3FC"},gradients:{accent:"linear-gradient(to right, #9672e4 0%, #2a0a69 100%)",accentHover:"linear-gradient(to right, #2a0a69 0%, #9672e4 100%)"}},X9=()=>{const[t,n]=Z.useState(()=>localStorage.getItem("theme")==="dark"),a=()=>{n(o=>{const u=!o;return localStorage.setItem("theme",u?"dark":"light"),u})},r=t?q9:G9;return Z.useEffect(()=>{document.body.setAttribute("data-theme",t?"dark":"light")},[t]),{isDark:t,setIsDark:n,toggleTheme:a,theme:r}},F9=()=>{const{isDark:t,toggleTheme:n,theme:a}=X9();return j.jsx(Z.StrictMode,{children:j.jsxs(vE,{theme:a,children:[j.jsx(Y9,{}),j.jsx($9,{toggleTheme:n,isDark:t})]})})};yw.createRoot(document.getElementById("root")).render(j.jsx(F9,{}));

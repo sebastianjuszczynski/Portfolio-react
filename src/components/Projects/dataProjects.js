@@ -56,7 +56,7 @@ export const dataProjects = [
     },
     image: MPimg,
     tech: ["html5", "css3", "javascript"],
-    link: "https://github.com/sebastianjuszczynski/Portfolio"
+    link: "https://sebastianjuszczynski.github.io/M-P-Removals---website/"
   },
       {
     title: "Organic Food - website",

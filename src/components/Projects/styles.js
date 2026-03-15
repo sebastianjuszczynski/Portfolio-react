@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { motion } from 'framer-motion';
-import LinkIcon from '../../assets/icons/link.svg?react';
+import { motion } from "framer-motion";
+import LinkIcon from "../../assets/icons/link.svg?react";
 
 export const ProjectsContainer = styled(motion.div)`
     display: flex;
@@ -9,7 +9,6 @@ export const ProjectsContainer = styled(motion.div)`
 `;
 
 export const MediaWrapper = styled(motion.div)`
-    position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
     border-radius: ${({ theme }) => theme.borders.radius.sm};
@@ -25,30 +24,12 @@ export const MediaWrapper = styled(motion.div)`
 `;
 
 export const ProjectImage = styled.img`
-    position: absolute;
-    top: 0;
-    width: 100%;
-    left: 0;
-    height: 100%;
-    object-fit: cover;
-    border-radius: ${({ theme }) => theme.borders.radius.sm};
-    transition: opacity 0.3s ease-in-out;
-    opacity: 1;
-    z-index: 1;
-`;
-
-export const ProjectVideo = styled.video`
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: ${({ theme }) => theme.borders.radius.sm};
-    transition: opacity 0.3s ease-in-out;
-    opacity: 0;
-    z-index: 1;
-    pointer-events: none;
+    transition: transform 0.3s ease-in-out;
 `;
 
 export const LayoutCenter = styled.div`
@@ -59,8 +40,7 @@ export const LayoutCenter = styled.div`
     gap: ${({ theme }) => theme.spacing.gap.xl};
 `;
 
-export const ProjectCard = styled(motion.div)`
-    position: relative;
+export const ProjectCard = styled(motion.article)`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -73,7 +53,7 @@ export const ProjectCard = styled(motion.div)`
 
     @media (min-width: 768px) {
         width: 350px;
-        margin: ${({ theme }) => theme.spacing.margin.center};;
+        margin: ${({ theme }) => theme.spacing.margin.center};
     }
 
     @media (min-width: 1024px) {
@@ -82,14 +62,9 @@ export const ProjectCard = styled(motion.div)`
     }
 
     &:hover ${ProjectImage} {
-        opacity: ${({ $isMobile }) => $isMobile ? "1" : "0"};
-    }
-
-    &:hover ${ProjectVideo} {
-        opacity: ${({ $isMobile }) => $isMobile ? "0" : "1"};
+        transform: scale(1.03);
     }
 `;
-
 
 export const ProjectContent = styled(motion.div)`
     display: flex;
@@ -101,11 +76,20 @@ export const ProjectContent = styled(motion.div)`
 export const ProjectTitle = styled(motion.h3)`
     font-size: ${({ theme }) => theme.font.sizes.lg};
     color: ${({ theme }) => theme.colors.accent};
+    margin: 0;
 `;
 
 export const ProjectDescription = styled(motion.p)`
     font-size: ${({ theme }) => theme.font.sizes.sm};
     color: ${({ theme }) => theme.colors.textSecondary};
+    margin: 0;
+    min-height: 48px;
+    line-height: 1.5;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 
     @media (min-width: 768px) {
         font-size: ${({ theme }) => theme.font.sizes.base};
@@ -136,8 +120,9 @@ export const TechImage = styled.img`
     @media (min-width: 1024px) {
         width: 20px;
         height: 20px;
-        transition: ${({ theme }) => theme.transition.transform}
+        transition: ${({ theme }) => theme.transition.transform};
     }
+
     &:hover {
         transform: translateY(-5px);
     }
@@ -151,23 +136,20 @@ export const ProjectLink = styled(motion.a)`
     align-items: center;
     gap: ${({ theme }) => theme.spacing.gap.xs};
 
-    @media (min-width: 768px) {
-        font-size: ${({ theme }) => theme.font.sizes.base};
+    @media (min-width: 1024px) {
+        transition: ${({ theme }) => theme.transition.color};
     }
 
-    @media (min-width: 1024px) {
-        transition: ${({ theme }) => theme.transition.color}
-    }
     &:hover {
-        color: ${({ theme }) => theme.colors.accentHover}
+        color: ${({ theme }) => theme.colors.accentHover};
     }
 `;
 
 export const LinkImage = styled(LinkIcon)`
     width: 20px;
     height: 20px;
-    display: block;   
-    
+    display: block;
+
     @media (min-width: 768px) {
         width: 24px;
         height: 24px;
@@ -179,7 +161,4 @@ export const LinkImage = styled(LinkIcon)`
     }
 `;
 
-export const LinkSpan = styled.span`
-
-`;
-
+export const LinkSpan = styled.span``;

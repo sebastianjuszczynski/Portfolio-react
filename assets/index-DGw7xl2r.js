@@ -1267,6 +1267,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     @media (min-width: 768px) {
         width: 350px;
         margin: ${({theme:t})=>t.spacing.margin.center};
+        margin-bottom: 30px;
+        padding-bottom: 30px;
     }
 
     @media (min-width: 1024px) {

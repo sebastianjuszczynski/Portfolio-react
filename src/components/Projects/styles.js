@@ -54,6 +54,8 @@ export const ProjectCard = styled(motion.article)`
     @media (min-width: 768px) {
         width: 350px;
         margin: ${({ theme }) => theme.spacing.margin.center};
+        margin-bottom: 30px;
+        padding-bottom: 30px;
     }
 
     @media (min-width: 1024px) {
